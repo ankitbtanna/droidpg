@@ -1,0 +1,8 @@
+<resources>
+
+    <string name="app_name">Tech Time</string>
+    <string name="hello_world">Tech Time</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_tech_time_home">Tech Time 2.0</string>
+
+</resources>
