@@ -1,0 +1,148 @@
+.footerPadding{
+ /*margin-left : 15px;*/
+ /*background:#F0EFED;*/
+background:white;
+/*padding-bottom: 5px;
+padding-top:5px;*/
+bottom: 5px;
+
+}
+
+
+.horizonalRule
+{
+	border: 0.1px solid #333333; 
+	width: 80%;
+	
+}
+.detailPageDiv
+{
+    width:100%;    
+    border : none;
+    right:0px;
+    left:0px;
+   /*  margin-left: 2.5%; 
+    margin-right: 2.5%; */
+}
+.detailPageTable
+{
+    width : 100%; 
+    margin : 0px; 
+    padding : 0px;
+    background : #F0EFED; 
+    right:0px;
+    left:0px;
+    border:none;
+    
+}
+
+.buttonDetailPage
+{
+    
+    width : 150px; 
+    height: 100px; 
+    background : orange; 
+    color : white;
+    
+}
+.buttonDetailPageThumb
+{
+    height:25px; 
+    width : 25px; 
+    border: solid; 
+    float:left; 
+    margin : 5px;
+    
+}
+
+
+ .footerDiv {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+}
+
+.techAreasCheckBox
+{
+    margin-top: 0px;
+}
+.techAreasLabel
+{
+    padding-left: 0px;
+    font-size: small;
+    
+}
+.talistClass
+{
+    text-decoration:none;
+    text-decoration: underline;
+    color:black;
+    font-style:normal;
+}
+
+.actualDetailThumb{
+border : none;
+height: 135px;
+width:160px; 
+margin:10px 10px 10px 10px;
+} 
+
+.detailPageButton
+{
+	margin-top:0px;margin-right:0px;
+	right:0px;
+}
+
+
+.detailPageButton:active{
+    -webkit-transform:scale(0.9); 
+    -moz-transform:scale(0.9); 
+    -ms-transform:scale(0.9); 
+    -o-transform:scale(0.9); 
+    transform:scale(0.9); 
+    -webkit-box-shadow:0px 0px 20px #FFF; 
+    -moz-box-shadow:0px 0px 20px #FFF; 
+    -o-box-shadow:0px 0px 20px #FFF; 
+    box-shadow:0px 0px 20px #FFF; 
+    border : 2px solid #F8991D;
+}
+
+.buttonClickEffect:active{
+	 -webkit-transform:scale(0.9); 
+    -moz-transform:scale(0.9); 
+    -ms-transform:scale(0.9); 
+    -o-transform:scale(0.9); 
+    transform:scale(0.9); 
+    -webkit-box-shadow:0px 0px 20px #FFF; 
+    -moz-box-shadow:0px 0px 20px #FFF; 
+    -o-box-shadow:0px 0px 20px #FFF; 
+    box-shadow:0px 0px 20px #FFF; 
+    
+}
+	
+.backButtonClickEffect:active{
+	 -webkit-transform:scale(0.9); 
+    -moz-transform:scale(0.9); 
+    -ms-transform:scale(0.9); 
+    -o-transform:scale(0.9); 
+    transform:scale(0.9); 
+    -webkit-box-shadow:0px 0px 20px transparent; 
+    -moz-box-shadow:0px 0px 20px transparent; 
+    -o-box-shadow:0px 0px 20px transparent; 
+    box-shadow:0px 0px 20px transparent; 
+    border : none;
+}
+	
+
+
+.detailPageButtonDiv
+{
+	
+	width:120px;
+	height:40px;
+	z-index:100;
+	border:none;
+
+}
+
+

@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1"> 
+<link rel="stylesheet" href="css/jquery.mobile-1.1.1.css" />
+ <!-- <script type="text/javascript" src="libs/cordova-2.5.0.js" charset="utf-8"></script> -->
+		
+		<link rel="stylesheet" href="css/techtime.css">
+		
+
+		<title>Tech Time Preference Page</title>
+
+		<script>
+			function initPref() {
+				//window.addEventListener("backbutton", backKeyDownPref, false);
+				//$.mobile.orientationChangeEnabled = false;
+				var status = "";
+				var statusCN = window.localStorage.getItem("status");
+
+				if (statusCN == null || statusCN == "") {
+					statusCN = "online";
+					window.localStorage.setItem("status", "online");
+				}
+
+				AndroidFunction.getStatus(statusCN);
+
+			}
+
+		</script>
+</head>
+<body class="backgd" style = "color: #FF9900;font-family: Arial;background: white;width:100%;overflow: hidden">	
+	<div id="PrefPage" data-role="page" style='border:none;overflow :hidden'>
+			
+			<!-- <span style="position:absolute;top:45%;width:100%;left:20%;"> <img src="css/images/ajax-loader.gif" width="25" height="25" style="margin-left:25%"/> <br>
+				<label class="labelMsg" style="margin-left:20%">Launching Tech Time…&nbsp;&nbsp;&nbsp;&nbsp;</label> </span> -->
+	<table border="0" align="center" style="position:absolute;top:45%;width:100%;">
+				<tr>
+					<td align='center'><img src="css/images/ajax-loader.gif" width="25" height="25" /></td>
+				</tr>
+				<tr>
+					<td align='center'><label class="labelMsg" >Launching Tech Time…</label></td>
+				</tr>
+			</table>
+	</div> 
+
+</body>
+
+</html>

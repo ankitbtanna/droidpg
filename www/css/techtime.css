@@ -1,0 +1,467 @@
+@font-face {
+    font-family: AgfaRotisSans;
+    src: url('fonts/rotsan.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: AgfaRotisSans;
+    font-weight: bold;
+    src: url('fonts/rotsanb.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: AgfaRotisSansLight;
+    src: url('fonts/rotsanl.ttf') format('truetype');
+}
+
+/*******STICKY FOOTER*******/
+
+
+HTML, body{
+height:100%;
+padding:0;
+margin:0;
+
+}
+
+.footerFixed{
+      position: absolute;
+      width: 100%;
+      bottom: 75px;
+      height: 75px;
+     
+}
+
+.applicationPage{
+    min-height: 100%;  
+    position:relative;
+}
+
+
+.applicationPageContent{
+padding-bottom:30px;
+
+}
+/*******STICKY FOOTER END*******/
+
+body, .backgd {
+    color: #FF9900;
+    font-family: Arial;
+    background: white;
+    overflow-x: hidden;
+    width:100%;
+}
+
+.color {
+    color: #FF9900;
+    float: left;
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+.dynamicDiv {
+    border: none;
+    /*width: 99.2%;*/
+    height: 25px;
+    /*background-color: #FF9900;*/
+   background : #FF9900;
+    border-top: none;
+    padding-top: 5px;
+    margin-top: 2px;
+    padding-left: 15px;
+    
+}
+.dynamicDivList {
+    border: solid 1px silver;
+    width: 98;
+    height: 25px;
+    background: #B3B4B4;
+    border-top: none;
+    padding-top: 5px;
+    margin-top: 1px;
+    padding-left: 10px;
+}
+
+.dynamicDivCat {
+    color: #FF9900;
+    border: solid 1px silver;
+    width: 100%;
+    height: auto;
+    background: white;
+    margin: 0px;
+    padding-left: 6px;
+}
+
+.anchorCategory {
+    background-color: #FF9900;
+    font-family: "AgfaRotisSans";
+    font-size: 15.5px; /*13.5px*/
+    text-decoration: none;
+    font-weight: bold;
+    /*background: #FFFFFF;*/
+    padding-top: 39px;
+}
+
+.playlistCategory{
+	 color: black;
+    background-color: inherit;
+    text-decoration: none;
+    font-weight: bold;
+
+    
+}
+
+.anchorMedia {
+    color: #FF9900;
+    text-decoration: none;
+    margin: auto;
+    font-family: Arial;
+    font-size: 8px;
+    font-weight: bold;
+    color: #FFFFFF;
+    background: #FF9900;
+
+}
+
+
+.header {
+    font-family: "AgfaRotisSans";
+  /*  font-size: 24px;*/
+  		font-weight: bold;
+    color: #000000;
+    background: white;
+    border-bottom: solid 1.5px;
+}
+
+.headerLabel {
+	
+    font-family: "AgfaRotisSans";
+    font-size: 20px; /*16px*/
+    text-align: center;
+    color: #000000;
+    border-bottom: black;
+    font-weight:bold;
+    margin: 0.6em 30% 0.8em;
+    
+}
+
+.footer {
+    background: #CCCCCC;
+    color: #FF9900;
+    height: 42px;
+
+}
+
+.footer_login {
+    width: 30%;
+    color: #FF9900;
+}
+
+.btn {
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 10px;
+    color: #FFFFF;
+    background: #FF9900;
+    text-decoration: none;
+    border: solid 1px ButtonShadow;
+    border-color :#cccccc;
+}
+
+.btnBack {
+    text-decoration: none;
+    border-color: white;
+    border-right-color: #aaaaaa;
+    font-family: Arial;
+    font-size: 14px;
+    font-weight: bold;
+    color:#FFFFFF;
+    width: 20%; 
+	background-image: url('../images/back.png'); 
+	background-repeat: no-repeat; 
+	background-position: 2px 11px;
+	-webkit-border-top-right-radius: 15px;
+    -webkit-border-bottom-right-radius: 18.5px;
+    -moz-border-radius-topright: 18.5px;
+    -moz-border-radius-bottomright: 18.5px;
+    border-top-right-radius: 18.5px;
+    border-bottom-right-radius: 18.5px;
+}
+
+.btnLogin {
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 12px;
+    color: #FFFFFF;
+	 width: 82.25%;
+    /*text-align: center;*/
+    margin: auto;
+    background: #FF9900;
+    
+}
+
+.btnRefLog {
+    text-align: right;
+    font-family: Arial;
+    font-size: 10px;
+    font-weight: bold;
+    border-color: #AAAAAA;
+    text-shadow:none;
+    color: #FFFFFF;
+    top: 5px;
+    font-weight: bold;
+    
+  
+}
+
+.playMediaBtn
+{
+
+    padding: 2px 6px;
+    margin-right:10px;
+    background-color: orange;
+    color : white;
+    text-decoration: none;
+    font-family: Arial;
+    font-size: 12px;
+    font-weight:bold;
+    border : solid 2px orange;    
+}
+
+.btnAV {
+    color: #FF9900;
+    text-decoration: none;
+    margin: auto;
+    font-size: 8px;
+    font-weight: bold;
+    font-family: Arial;
+    color: #FFFFFF;
+}
+
+.floatL {
+    float: left;
+}
+
+.labelLogin {
+    font-family: Arial;
+    font-size: 12px;
+    color: #00000;
+    padding-left: 0px;
+}
+
+.label1 {
+    font-size: 14px; /*12px*/
+    font-weight: bold;
+    font-family: Arial;
+    color: #FF9900;
+    background: #FFFFFF;
+    padding-right: 5px;
+    margin-right: 1px;
+}
+
+.label2 {
+    font-size: 12px;/* 10px */
+    font-family: Arial;
+    color: #FF9900;
+    background: #FFFFFF;
+}
+
+.labelMsg {
+    font-size: 12px;/* 10px */
+    font-family: Arial;
+    color: #000000;
+    padding-left: 8px;
+}
+
+.label3 {
+    font-size: 11px; /*9px*/
+    font-family: Arial;
+    color: #000000;
+    background: #FFFFFF;
+}
+
+.labelMedia {
+    font-size: 11px; /*9px*/
+    font-family: Arial;
+    color: #000000;
+    background: #FFFFFF;
+    padding-right: 5px;
+    
+}
+
+.labelCheckbox {
+    font-size: 11px;
+    font-family: Arial;
+    color: #000000;
+    /*  font-weight: bold;
+    margin-left: 14%;*/
+}
+
+.labelLoginName {
+    font-weight: bold;
+   
+}
+
+.floatR {
+    float: right;
+}
+
+.labelTop {
+    font-family: "AgfaRotisSansLight";
+    font-size: 14.5px; /*11px*/
+    width: 98.8%;
+    height: auto;
+    /* background: #FF9900; */
+    background:#CCCCCC;
+    color: #000000;
+    margin: 0px;
+    padding: 0px;padding-left:10px; 
+   
+}
+
+.para {
+    background-color: gray;
+}
+
+.backgdMedia {
+    background: #666666;
+    color: #FF9900;
+    text-align:center;
+}
+
+.a1 {
+    text-decoration: none;
+}
+
+.checkbox {
+    font-size: 10px;
+    margin-left: 10%;
+    text-align: right;
+    color: black;
+}
+
+.download {
+    color: white;
+    background: #FF9900;
+    border-color: #BCBCBC;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 4px;
+}
+
+.inputBox {
+    font-family: Arial;
+    font-size: 12px;
+    color: #000000;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+ }
+
+.arrow {
+    padding-right: 15px;
+    padding-top: 4px;
+    float: right;
+}
+
+.acnLogo {
+    height: 100%;
+    width: 100%;
+    
+}
+
+.contentAlign
+{
+	text-align: center;
+	background: white;
+}
+
+.backBtnStyle{
+    height:30px;
+    width:69px;
+    padding-left:5px;
+    padding-top:15px;
+}
+
+input[type=checkbox]
+{
+  /* Double-sized Checkboxes */
+  -ms-transform: scale(1.1); /* IE */
+  -moz-transform: scale(1.1); /* FF */
+  -webkit-transform: scale(1.1); /* Safari and Chrome */
+  -o-transform: scale(1); /* Opera */
+  padding: 5px;
+}
+
+#labelHeading{
+ margin-top:7px;
+}
+
+
+
+.navigation 
+{
+	list-style: none;
+	padding-left: 0;
+	margin: 0 auto;
+	
+	
+}
+ul.navigation 
+{
+	float: left;
+}
+ul.navigation li 
+{
+ 	margin: 0 auto;
+	float: left;
+	padding-right: 15px;
+	position: relative;
+}
+ul.navigation li a
+{
+	
+	font-size: larger;
+	color: red;
+	display: block;
+	text-decoration: none;	
+}
+ul.navigation li a:hover
+{
+	background: #000;
+}
+
+ul.navigation li ul.submenu 
+{
+	list-style: none;
+	margin: 0; 
+	padding: 0;
+	position: absolute;
+	left: 0; 
+	top: 35px;
+	background: white;
+	display: none;
+	border: 1px solid #ffa500;
+	z-index: 999999999;
+}
+ul.navigation li ul.submenu li
+{
+	margin: 0 auto; 
+	padding: 0;
+	border-bottom: 1px solid #ffa500;
+	font-style: normal;
+	font-size: x-small;
+	width: 100px;
+}
+ul.navigation li ul.submenu li a 
+{
+	width: 80px;
+	background: white;
+	padding-left: 20px;
+	float: left;
+	color:#ffa500;
+}
+ul.navigation li ul.submenu li a:hover 
+{ 
+	background: #222222 url(images/tick.png) left center no-repeat;
+}

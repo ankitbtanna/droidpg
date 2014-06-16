@@ -1,0 +1,2825 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<meta charset="utf-8">
+	
+		<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+		
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+
+		<title>Tech Time</title>
+
+		<link rel="stylesheet" href="css/jquery.mobile-1.1.1.css" />
+		<link rel="stylesheet" href="css/jquery.alerts.css" />
+		<link rel="stylesheet" href="css/techtime.css">
+		<link rel="stylesheet" href="css/HeaderStyle.css">
+		<link rel="stylesheet" href="css/listMedia.css">
+		<link rel="stylesheet" href="css/jquery.alerts.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="css/toggle-switch.css">
+		<link rel="stylesheet" href="css/mainTechtime.css" type="text/css"  />
+		<link rel="stylesheet" href="css/drop-down-menu.css" type="text/css"  />
+		<link rel="stylesheet" href="css/video-js.css" type="text/css"  />
+		<!-- This is for the IPA Packaging-->
+		<!--<script type="text/javascript" src="libs/cordova.ios.js" charset="utf-8"></script>-->
+		<!-- This is for the android -->
+
+		<script type="text/javascript" src="libs/cordova-2.5.0.js" charset="utf-8"></script>
+		<script type="text/javascript" src="libs/jquery-1.8.0.js"></script>
+		<script type="text/javascript" src="libs/jquery.mobile-1.2.1.min.js"></script>
+		<script type="text/javascript" src="libs/jquery.alerts.js" ></script>
+		<script type="text/javascript" src="libs/drop-down-menu.js"></script>
+		<script type="text/javascript" src="libs/video.js"></script>
+		<script type="text/javascript" src="scripts/init.js"></script>
+		<script type="text/javascript" src="scripts/fileManipulation.js"></script>
+		<script type="text/javascript" src="scripts/techtime.js"></script>
+		<script type="text/javascript" src="scripts/download_CB.js"></script>
+ 		<script type="text/javascript" src="scripts/techWatch.js"></script> 
+ 		<script type="text/javascript" src="scripts/appUpgrade.js"></script>	
+		<script type="text/javascript" src="scripts/MainPageLoad.js"></script>
+		<script type="text/javascript" src="scripts/xmlOperations.js"></script>
+		<script type="text/javascript" src="scripts/showContent.js"></script>
+		<script type="text/javascript" src="scripts/listing.js"></script>
+		<script type="text/javascript" src="scripts/playLists.js"></script>   	   
+		<script type="text/javascript" src="scripts/Sync.js"></script> 
+		<script type="text/javascript" src="scripts/contribute.js"></script> 
+		<script type="text/javascript" src="plugins/ChildBrowser.js"></script>
+		<script type="text/javascript" charset="utf-8" src="plugins/video.js"></script>
+		<script type="text/javascript" charset="utf-8" src="plugins/pdfviewer.js"></script>
+	    <script type="text/javascript" charset="utf-8" src="scripts/Spotlight.js"></script>       
+		<script type="text/javascript" src="libs/google-analytics.js"></script>
+		
+			
+
+
+		<style>
+			@media screen and (orientation: portrait) {/* Portrait styles here */
+				.navigateMenu {
+					position: absolute;	
+					min-height: 100%;				
+					width: 100%;
+					background: white;
+					z-index: 1000;
+					display: none;
+					height: 100%;
+				}
+
+				
+				.eYourself {
+				
+					margin-right: 2%;
+					float: right;
+				}
+
+				.highPerf {
+					margin-left: 6%;
+					vertical-align: middle;
+				}
+				
+				.filters{
+					margin-left: 3.8%;
+				}
+				
+				.selCatNameClass{
+					margin-left: 4.0%;
+				}
+
+
+				#a2, #a3 {
+					width: 50%;
+					height: 17%;
+					position: absolute;
+					background: white;
+					display: none;
+					top: 30%;
+					margin-left: 1%;
+					margin-right: 1%;
+					border: solid 1px grey;
+				}
+
+				
+			}
+
+			@media screen and (orientation: landscape) {/* Landscape styles here */
+				.navigateMenu {
+					position: absolute;
+					top: 104px;
+					min-height: 100%;
+					width: 100%;
+					background: white;
+					z-index: 1000;
+					display: none;
+					
+				}
+
+				
+				.eYourself {
+					/*margin-left : 2%;
+					 width :90%;
+					 padding-top:10px;*/
+					margin-right: 2%;
+					float: right;
+				}
+
+				.highPerf {
+
+					margin-left: 6%;
+					vertical-align: middle;
+					
+				}
+				
+			    .filters{
+					margin-left: 1.3%;
+				}
+
+				.selCatNameClass{
+					margin-left: 2.3%;
+				}
+
+				#a2, #a3 {
+					width: 50%;
+					height: 25%;
+					position: absolute;
+					background: white;
+					display: none;
+					top: 30%;
+					margin-left: 1%;
+					margin-right: 1%;
+					border: solid 1px grey;
+				}
+
+			}
+
+			#a1 {
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				background: ButtonHighlight;
+				display: none;
+				text-align: center;
+				background-color: transparent;
+				top: 0px;
+				left: 0px;
+				border: Solid;
+			}
+
+			.popupBtn {
+				width: 70%;
+				margin: auto;
+				text-align: center;
+				border: Solid white;
+				/*height: 35px;
+				 line-height: 20px;*/
+				margin-top: 5px;
+			}
+
+			.popupBtn:active {
+				-webkit-transform: scale(0.9);
+				-moz-transform: scale(0.9);
+				-ms-transform: scale(0.9);
+				-o-transform: scale(0.9);
+				transform: scale(0.9);
+				-webkit-box-shadow: 0px 0px 20px #FFF;
+				-moz-box-shadow: 0px 0px 20px #FFF;
+				-o-box-shadow: 0px 0px 20px #FFF;
+				box-shadow: 0px 0px 20px #FFF;
+			}
+
+			.testToggle {
+			}
+
+			.mainDiv {
+				border: 3px solid red;
+				width: 50%;
+				height: 50px;
+			}
+
+			.toggleDiv {
+				width: 40%;
+				height: 20px;
+				border: 2px solid blue;
+				background: orange;
+			}
+
+			.uncheckedMode {
+				background: white;
+			}
+
+			.abc {
+			}
+
+			.xyz {
+
+			}
+
+			.toggleButtonDiv {
+
+			}
+
+			.dynamicDivList:active {
+
+				background: #aebcbf; /* Old browsers */
+				background: -moz-linear-gradient(top,  #aebcbf 0%, #6e7774 100%, #0a0e0a 100%, #0a0809 100%); /* FF3.6+ */
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#aebcbf), color-stop(100%,#6e7774), color-stop(100%,#0a0e0a), color-stop(100%,#0a0809)); /* Chrome,Safari4+ */
+				background: -webkit-linear-gradient(top,  #aebcbf 0%,#6e7774 100%,#0a0e0a 100%,#0a0809 100%); /* Chrome10+,Safari5.1+ */
+				background: -o-linear-gradient(top,  #aebcbf 0%,#6e7774 100%,#0a0e0a 100%,#0a0809 100%); /* Opera 11.10+ */
+				background: -ms-linear-gradient(top,  #aebcbf 0%,#6e7774 100%,#0a0e0a 100%,#0a0809 100%); /* IE10+ */
+				background: linear-gradient(to bottom,  #aebcbf 0%,#6e7774 100%,#0a0e0a 100%,#0a0809 100%); /* W3C */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aebcbf', endColorstr='#0a0809',GradientType=0 ); /* IE6-9 */
+			}
+
+			.linkTransition:active {
+				border: solid 1px silver;
+				width: 99.9%;
+				height: 25px;
+				background: #B3B4B4;
+				border-top: none;
+				padding-top: 5px;
+				margin-top: 1px;
+				text-indent: 10px;
+			}
+
+			.listItemClick:active {
+				background: #d6d6d6; /* Old browsers */
+				background: -moz-linear-gradient(top,  #d6d6d6 0%, #d6d6d6 100%); /* FF3.6+ */
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d6d6d6), color-stop(100%,#d6d6d6)); /* Chrome,Safari4+ */
+				background: -webkit-linear-gradient(top,  #d6d6d6 0%,#d6d6d6 100%); /* Chrome10+,Safari5.1+ */
+				background: -o-linear-gradient(top,  #d6d6d6 0%,#d6d6d6 100%); /* Opera 11.10+ */
+				background: -ms-linear-gradient(top,  #d6d6d6 0%,#d6d6d6 100%); /* IE10+ */
+				background: linear-gradient(to bottom,  #d6d6d6 0%,#d6d6d6 100%); /* W3C */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6d6d6', endColorstr='#d6d6d6',GradientType=0 ); /* IE6-9 */
+			}
+
+			.dynamicDiv:active {
+				background: #FF7400; /* Old browsers */
+				background: -moz-linear-gradient(top,  #FF7400 0%, #FF7400 100%); /* FF3.6+ */
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FF7400), color-stop(100%,#FF7400)); /* Chrome,Safari4+ */
+				background: -webkit-linear-gradient(top,  #FF7400 0%,#FF7400 100%); /* Chrome10+,Safari5.1+ */
+				background: -o-linear-gradient(top,  #FF7400 0%,#FF7400 100%); /* Opera 11.10+ */
+				background: -ms-linear-gradient(top,  #FF7400 0%,#FF7400 100%); /* IE10+ */
+				background: linear-gradient(to bottom,  #FF7400 0%,#FF7400 100%); /* W3C */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FF7400', endColorstr='#FF7400',GradientType=0 ); /* IE6-9 */
+			}
+
+			.dynamicDivForLogout {
+				border: none;
+				/*width: 99.2%;*/
+				height: 25px;
+				/*background-color: #FF9900;*/
+				background: #FF9900;
+				border-top: none;
+				padding-top: 5px;
+				margin-top: 2px;
+				padding-left: 15px;
+			}
+
+			video::-webkit-media-controls-fullscreen-button {
+    			display: none;
+			}
+			
+			#upgradeAplicationPageFooter
+� � � � � � � � � � � � � � {
+� � � � � � � � � � � � � � � � position: fixed;
+� � � � � � � � � � � � � � � � bottom: 0;
+� � � � � � � � � � � � � � � � width: 100%;
+� � � � � � � � � � � � � � � � background: white;
+� � � � � � � � � � � � � � � � line-height: 2;
+� � � � � � � � � � � � � � � � text-align: center;
+� � � � � � � � � � � � � � � � font-size: 18px;
+� � � � � � � � � � � � � � � � font-weight: normal;
+� � � � � � � � � � � � � � }
+
+				   input[id="newPlaylistNamePlaceholder"]::-webkit-input-placeholder
+                            {
+                                color:gray;
+                            }
+                            
+                            input[id="renamePlaylistNamePlaceholder"]::-webkit-input-placeholder
+                            {
+                                color:gray;
+                            }
+                            
+                            input[id^="assistedRecording"]::-webkit-input-placeholder
+                            {
+                                color:gray;
+                            }
+                            
+                            input[id^="selfRecording"]::-webkit-input-placeholder
+                            {
+                                color:gray;
+                            }
+                            
+                            input[id^="playlistRecepient"]::-webkit-input-placeholder
+                            {
+                                color:gray;
+                            }
+			
+			
+		</style>
+		
+		
+		<script>
+		 
+		  $(document).bind("mobileinit", function(){
+	 // $.mobile.touchOverflowEnabled = true;
+	       $.mobile.defaultPageTransition = 'none';
+
+	});
+
+			function metrics()
+  			{
+  						//Androidtracking.getTracker();
+  						
+  			}
+  
+			function displayContent() {
+				$('.toggleButtonDiv').show();
+				$(".backBtnAnch").show();
+				$('.backBtn').show();
+			}
+
+			function showPopup(element) {
+				document.getElementById('a1').style.display = 'block';
+				document.getElementById(element).style.display = 'block';
+			}
+
+			function hidePopup() {
+
+				document.getElementById('a1').style.display = 'none';
+				document.getElementById('a2').style.display = 'none';
+				document.getElementById('a3').style.display = 'none';
+			}
+
+			function homeScreenMenus(el) {
+
+				if (el == "techArea" || el == "spotlight") {
+
+					var b = $('#' + el + '1').is(':visible');
+
+					$('#techAreaArrow').html("<img src='images/icon_whiteRight.png' width='13' height='13' style='float:right;padding-right:20%;' />");
+					$('#spotlightArrow').html("<img src='images/icon_whiteRight.png' width='13' height='13' style='float:right;padding-right:20%;' />");
+					$(".mainMenuListContent").hide();
+
+					if (!b) {
+						$('#' + el + '1').toggle('fast');
+						//$('#' + el + '1').show('slow');
+						$('#' + el + 'Arrow').html("<img src='images/icon_whiteDown.png' width='13' height='13' style='float:right;padding-right:20%;'/>");
+					}
+				}
+
+			}
+
+			// <!------------------------------NAVIGATE----------------------------------------------------------->
+
+			var currNavigateDiv = 'navigateDiv';
+
+			function showNavigateDiv(NewNavigateDivArea) {		
+			
+				stopPlayingMedia();
+				
+				var currNavigateDivContent = '';
+				$('#techAreaArrow').html("<img src='images/icon_whiteRight.png' width='13' height='13' style='float:right;padding-right:20%;' />");
+				$('#spotlightArrow').html("<img src='images/icon_whiteRight.png' width='13' height='13' style='float:right;padding-right:20%;' />");
+				$(".mainMenuListContent").hide();
+
+				var allNavigateDiv = ["navigateDiv", "navigateBusinessCategory", "navigateDetailMediaPage", "navigateDetailAuthor", "navigateSpotlightPage", "navigateUpcomingEventsPage", "navigateSubscribePage", "navigateAboutTectTimePage","navigateContributePage", "navigateContactUsPage", "navigateFaqPage", "navigateTAListResult", "navigateResultPage","navigateTechWatchPage","navigateDownloadsPage","navigatePlaylistsPage","navigatePlaylistsItemPage","navigateSharePlaylistsPage"];
+
+				currNavigateDivContent = document.getElementById(currNavigateDiv).innerHTML;
+				
+
+				$.each(allNavigateDiv, function(key, tempAuthor) {
+					document.getElementById(currNavigateDiv).style.display = 'none';
+					document.getElementById(currNavigateDiv).innerHTML = '';
+				});
+
+					
+				if (NewNavigateDivArea == currNavigateDiv) {				
+
+					$('.toggleButtonDiv').show();
+					$(".backBtnAnch").show();
+					$('.backBtn').show();
+					currNavigateDiv = "navigateDiv";
+					document.getElementById(currNavigateDiv).innerHTML = currNavigateDivContent;
+					document.getElementById(currNavigateDiv).style.display = 'block';
+
+				} else {
+					
+					currNavigateDiv = NewNavigateDivArea;
+					document.getElementById(currNavigateDiv).innerHTML = currNavigateDivContent;
+					document.getElementById(currNavigateDiv).style.display = 'block';
+					$(".backBtnAnch").hide();
+					$('.backBtn').hide();
+				}
+
+				if (document.getElementById('navigateDiv').innerHTML == '') {
+					//document.getElementById('homescreenBack').style.display = 'block';
+					document.getElementById('homescreenLogout').style.display = 'block';
+					document.getElementById('homescreenDownload').style.display = 'block';
+					$('.toggleButtonDiv').hide();
+					$(".backBtnAnch").hide();
+					$('.backBtn').hide();
+					
+				} else {
+					document.getElementById('homescreenLogout').style.display = 'none';
+					$('.toggleButtonDiv').show();
+					$(".backBtnAnch").show();
+					$('.backBtn').show();
+
+				}
+
+				$('#techAreaArrow').html("<img src='images/icon_whiteRight.png' width='13' height='13' style='float:right;padding-right:20%;' />");
+				$('#spotlightArrow').html("<img src='images/icon_whiteRight.png' width='13' height='13' style='float:right;padding-right:20%;' />");
+				$(".mainMenuListContent").hide();
+
+			}
+
+			function defaultNavigate() {
+				showNavigateDiv("navigateDiv");
+
+			}
+
+			function testToggle() {
+				$('.testToggle').val();
+			}
+
+			
+		 var currentSearchKey = '';
+                
+                function saveSearchKey(searchBar)
+                {
+                    // alert(searchBar);
+                    var searchBar = "#"+searchBar;
+                   currentSearchKey = $(searchBar).val();
+                  // currentSearchkey = searchBar;
+                    $('#searchsearchResultPage').val(currentSearchKey);
+                    
+                  //  console.log('currentSearchKey--'+currentSearchKey);
+                }
+
+
+
+			
+		</script>
+		
+
+		
+		
+		
+
+
+	</head>
+
+
+	<body class="backgd" onload="onBodyLoad()" onmouseover="">
+
+		<span style="top:45%;width:100%;left:20%;display:none;" id="loaderImg"> <img src="css/images/ajax-loader.gif" width="25" height="25" style="margin-left:25%"/> </span>
+
+		<div id="intialPage" data-role="page" style='border:none;overflow :hidden'>
+
+			<table border="0" cellpadding="0" cellspacing="0" style="width: 100%; border: none; padding : 0px; margin: 0px;" class='headerStyle'>
+				<tr>
+					<td style="height:70px;width: 50%;"><img id="accLogoImg" src="images/header_accentureRed.png" style="margin-left:10px"/></td>
+					<td style="height:70px;width: 50%;" valign="bottom"><img id="emp" src="images/header_empoweringYourself.png" class="eYourself" /></td>
+				</tr>
+				<tr>
+					<td colspan='2'>
+					<hr style='width:100%;color: black; height:0.5px;'>
+					</td>
+				</tr>
+			</table>
+
+
+<table border="0" align="center" style="position:absolute;top:45%;width:100%;">
+	<tr>
+		<td align='center'>
+			<img src="css/images/ajax-loader.gif" width="25" height="25" />
+		</td>
+	</tr>
+	<tr>
+		<td align='center'>
+			<label class="labelMsg" >Logging in to Tech Time…</label>
+		</td>
+	</tr>
+</table>
+				
+			<!--<span style="position:absolute;top:45%;width:100%;left:20%;"> <img src="css/images/ajax-loader.gif" width="25" height="25" style="margin-left:25%"/>
+				<br>
+				<label class="labelMsg" style="margin-left:20%">Logging in to Tech Time…&nbsp;&nbsp;&nbsp;&nbsp;</label> </span> -->
+		</div>
+		
+		<!-- ******************************************** Application Upgrade Page ******************************************** -->
+
+  <div id="upgradeApplicationPage" data-role="page" class="applicationPage" style="overflow-x:hidden;position:relative;overflow-y:hidden;background:#FFFFFF;">
+            <table border="0" cellpadding="0" cellspacing="0" style="width: 100%; padding : 0px; margin: 0px; top:0px;background: white;" class='headerStyle'>
+<tr>
+<td style="height:70px;width: 50%;top:0px;" ><img id="accLogoImg1" src="images/header_accentureRed.png" class="acnLog" /></td>
+<td style="height:70px;width: 50%;top:0px;" valign="bottom"><img id="emp1" src="images/header_empoweringYourself.png" class="eYourself" /></td>
+</tr>
+
+<tr>
+<td style="width: 100%" colspan = "2"><img id="bannerImage" src="images/banner_rightPlace1280x800.png" style="width:100%"/></td>
+</tr>
+
+
+
+</table>
+            <table style="width:100%;" border="0">
+                <tr>
+                    <td style="width:100%;text-align:center;" colspan="2">
+                        <br><label style="font-size: 24px;font-family: AgfaRotisSans;font-weight:bolder;">Update Tech Time App</label><br><br/>
+                        <label id='customUpdateMessage' style="padding-left:15px;padding-right:15px;font-size:18px;font-family: AgfaRotisSans;font-weight:normal;display:table-cell;">A new feature that will help you share multiple videos with your peers is now available - would you like to install this new version?</label>
+                    </td>
+                </tr>
+            </table>
+            
+            <div id='upgradeAplicationPageFooter' style="width:100%;bottom:0;position:fixed;display:inline-block; background: white;line-height: 2;text-align: center;font-size: 18px;font-weight: normal;">
+                <!-- <input type="checkbox" data-role="none" name="upgradeApplicationCheckbox" id="upgradeApplicationCheckbox" style="float:left;margin-left:10px;" onclick='warnUserForUpgrade(this);'/><label style="font-size:18px;float:left;padding-left:10px;">Do not ask me to upgrade again.</label> -->
+                <div style="width:49%;float:left;background:orange;border:2px solid white;text-align:center;font-weight:bold;color:#FFFFFF" onclick="upgradeUserApplication();">Update</div>
+                <div style="width:49%;float:left;background:orange;border:2px solid white;text-align:center;font-weight:bold;color:#FFFFFF" onclick="cancelUpgrade();">Cancel</div>
+            </div>
+        </div>
+        
+        <!-- ******************************************** Application Upgrade Page ******************************************** -->
+		
+		<!-- ******************************************** Page - Business Category List ******************************************** -->
+
+		<!-- Start of second page: #businessCategory -->
+		<div id="businessCategory" data-role="page" class="businessCat" style="overflow-x:hidden;background: white;" >
+
+			<table border="0" cellpadding="0" cellspacing="0" style="width: 100%; padding : 0px; margin: 0px; top:0px;background: white;" class='headerStyle'>
+				<tr>
+					<td style="height:70px;width: 50%;top:0px;" ><img id="accLogoImg1" src="images/header_accentureRed.png" class="acnLog" /></td>
+					<td style="height:70px;width: 50%;top:0px;" valign="bottom"><img id="emp1" src="images/header_empoweringYourself.png" class="eYourself" /></td>
+				</tr>
+				<tr>
+					<td style="height:25px;width: 50% ;background-color :#cbcccc" ><img id="highPerfImg" src="images/header_highPerformance.png" class="highPerf"></td>
+					<td style="height:25px;width: 50%;background-color :#cbcccc" align="right">
+						
+						<a href="" class="navigatebtnAnch" ><img src="images/navigate.png" class="navigatebtn pushEffect" onclick='showNavigateDiv("navigateBusinessCategory")'></a></td>
+
+				</tr>
+				<tr>
+					<!--
+					src="images/banner_beInTheRightPlace.png" style="width: 100%; height : 70px; padding-top:2px;"
+					-->
+
+					<td style="width: 100%" colspan = "2"><img id="bannerImage" src="images/banner_rightPlace1280x800.png" style="width:100%"/></td>
+				</tr>
+				<tr>
+					<td style="width: 50%;height:20px;background-color :white;top:0px;" colspan = "2" valign="top">
+					<div style="border:none;">
+						<label id="usernameLabel" style="padding-left:3px;font-style: normal;font-size: x-small; margin-left : 4%; padding-bottom:4px;">Welcome <label id="lblUserName" class="labelLoginName"  style="font-size:10px;"></label></label>
+						<label style="float: right; margin-right : 20px; padding-bottom:5px;" onclick="postJSONData('logout','logout')"> | &nbsp;&nbsp;<span id='logoutLabelHomescreen' style="color:orange;font-style: normal;font-size: x-small">Logout</span></label>
+					</div></td>
+				</tr>
+				<tr>
+					<td colspan = "2" class="searchMainDiv">
+					<div class="searchTextboxDiv">
+						<input id="searchBusinessCategory" type="text" placeholder="Search" title="Search" class="searchBar input" style="padding:0px;margin:0px; margin-top:0px; margin-right:0px;left:0px;">
+					</div>
+					<div class="searchImgDiv">
+						<img src="images/icon_search.png" class="searchImg" onclick='pageFlagSet("businessCategory");showSearchResult("searchBusinessCategory","All","All","null")' />
+					</div></td>
+				</tr>
+
+			</table>
+
+		<!--	<video width="100%" controls="controls">
+
+                        <source src="https://techtime.accenture.com/sample1.m3u8" type="vnd.apple.mpegURL"/>
+
+                        <source src="https://techtime.accenture.com/hls-vod/sample1_150kbps.f4v" type="video/mp4"/>
+
+                </video> -->
+
+			
+			<div id='navigateBusinessCategory' class='navigateMenu' style='overflow-y:hidden;'></div>
+			<!-- Navigate DIV -->
+
+
+			<!-- <input type="file" name="pic" accept="audio/*|video/*">
+  			<input type="submit"> -->
+	
+			<div id='navigateDiv' style='overflow-y:hidden;'>
+
+				
+
+				<div class=dynamicDiv onclick="getList();setFlag('media');clearSearchTipfromSearch();" style="margin-bottom:7px;margin-top:7px;">
+					<a id="techArea" class='anchorCategory test' data-transition='slidedown' onclick='homeScreenMenus("techArea");'>
+					<div style='color:white;width:100%'>
+						Areas
+						<div id="techAreaArrow" style="width : 50px; padding-top:4px; float:right;">
+							<img src="images/icon_whiteRight.png" width="13" height="13" style="float:right;padding-right:20%;" onclick='getList();setFlag('media');'>
+						</div>
+					</div> </a>
+				</div>
+
+				<div id="techArea1" class='mainMenuListContent' style="display:none;width:100%">
+
+					<div class="detailPageDiv" id="noSubscribeDiv" style="display:none;border:none;">
+						<table border='0' style="width:100%">
+							<tr>
+								<td colspan='2' style="width:100%"><label style = "width:80%;">
+									<br>
+									You Will need to subscribe to Areas to view content.
+									<br>
+									<br>
+								</label></td>
+							</tr>
+							<tr>
+								<td style="width:50%" align='center'>
+								<div style="width:150px; height : 30px;background:orange; line-height : 30px;">
+									<a href="#subscribePage" id="subNow" onclick='showSubscribeContent()'  style="text-decoration:none; color:white;font-weight:normal">Subscribe Now</a>
+								</div></td>
+								<td style="width:50%" align='center'>
+								<div style="width:150px; height : 30px;background:orange; color:white; line-height : 30px;" onclick='homeScreenMenus("techArea")'>
+									Close
+								</div></td>
+							</tr>
+						</table>
+						<br>
+						<br>
+					</div>
+
+					<ul id="TAcontentArea" data-role="listview" data-theme="b"></ul>
+
+					<div data-role="content" class="backgd"></div>
+				</div>
+
+
+
+
+
+	<!-- --------------------------------------TechWatch--------------------------------------> 
+
+		 		<div class='dynamicDiv' id='techWatch'>
+					<a id="" href="#techWatchPage" class='anchorCategory test' onclick = "showTechWatchContent(currentTechWatchItemId, currentTechWatchItemIndex)">
+					<div style='color:white;'>
+						Tech Watch
+						<div id="" style="width : 50px; float:right;">
+							<img src='images/icon_whiteRight.png' width="13" height="13" style="float:right;padding-right:20%;" />
+						</div>
+					</div> </a>
+				</div> 
+
+				<!-- --------------------------------------TechWatch--------------------------------------> 
+				
+				
+				<div class=dynamicDiv id="homescreenPlaylist" onclick='defaultNavigate();displayPlaylist();'>
+                        <a id="userPlaylistsAnchor" class='anchorCategory test' href="#PlaylistsPage" >
+                            <div style='color:white;'>Playlists
+                                <div id="" style="width : 50px; float:right;">
+                                    <img src='images/icon_whiteRight.png' width="13" height="13" style="float:right;padding-right:20%;" />
+                                </div>
+                            </div>
+                        </a>
+                 </div> 
+				
+
+				<div class=dynamicDiv onclick="getList();setFlag('spotlight');">
+					<a id="spotlight" class='anchorCategory test' data-transition='slidedown' onclick='homeScreenMenus("spotlight");showSpotLightContent();'>
+					<div style='color:white;'>
+						Spotlight
+						<div id="spotlightArrow" style="width : 50px; padding-top:4px; float:right;">
+							<img src="images/icon_whiteRight.png" width="13" height="13" style="float:right;padding-right:20%;">
+						</div>
+					</div> </a>
+				</div>
+
+
+					<!--<div id="spotlight1" class='mainMenuListContent' style="width:100%">  -->
+				 <div id="spotlight1" class='mainMenuListContent' style="display:none;width:100%"> 
+	
+					<table id="spotlightListNoSubscribe" border='0' style="width:100%;display:none;">
+						<tr>
+							<td style="width:100%;padding-left:20px;"><label style="margin-left:4%">
+								<br>
+								There are no Spotlight items available for your subscribed Areas.
+								<br>
+								<br>
+							</label></td>
+						</tr>
+						<tr>
+							<td style="width:100%; padding-left:20px;" align='left'>
+							<div style="width:150px; height : 30px;background:orange; line-height : 30px;">
+								<div style="width:120px; height : 30px;background:orange; color:white; line-height : 30px;" onclick='homeScreenMenus("spotlight")'>
+									&nbsp; Close
+								</div>
+							</div></td>
+						</tr>
+					</table>
+					<div id="spotlightList"></div>
+					<ul id="spotlightListArea" data-role="listview" data-theme="b"></ul>
+
+				</div>
+				
+				
+		<!--  <div class=dynamicDiv id='homescreenContribute' onclick="setFlag('contribute');showContri();">
+					<a id="userContributeAnchor" class='anchorCategory test' data-transition='slidedown'>
+					<div style='color:white;'>
+						Contribute
+						<div style="width : 50px; padding-top:4px; float:right;">
+							<img src="images/icon_whiteRight.png" width="13" height="13" style="float:right;padding-right:20%;">
+						</div>
+					</div> </a>
+				</div> -->
+
+				<div class=dynamicDiv>
+					<a id="upcomingEvents"  class='anchorCategory test' href="#UpcomingEventsPage" onclick="showUpcomingEventList('curr',null);displayContent()">
+					<div style='color:white;'>
+						Events
+						<div id="" style="width : 50px; padding-top:4px; float:right;">
+							<img src="images/icon_whiteRight.png" width="13" height="13" style="float:right;padding-right:20%;" onclick="showUpcomingEventList('curr',null)" >
+						</div>
+					</div> </a>
+				</div>
+
+				<div class=dynamicDiv>
+					<a id="subscribe" class='anchorCategory test' href="#subscribePage" onclick='showSubscribeContent();displayContent()'>
+					<div style='color:white;'>
+						Subscribe
+						<div id="" style="width : 50px; padding-top:4px; float:right;">
+							<img src="images/icon_whiteRight.png" width="13" height="13" style="float:right;padding-right:20%" onclick='showSubscribeContent()'>
+						</div>
+					</div> </a>
+				</div>
+
+				<div class=dynamicDiv>
+					<a id="aboutTechtime" class='anchorCategory test' href="#aboutTectTimePage" onclick='showAboutTTArea();displayContent()'>
+					<div style='color:white;'>
+						About Tech Time
+						<div id="" style="width : 50px; padding-top:4px; float:right;">
+							<img src="images/icon_whiteRight.png" width="13" height="13" style="float:right;padding-right:20%" onclick='showAboutTTArea()'>
+						</div>
+					</div> </a>
+				</div>
+
+				<div class=dynamicDiv>
+					<a id="contactUs" class='anchorCategory test' href="#contactUsPage" onclick='contactUsFocus();displayContent();'>
+					<div style='color:white;'>
+						Contact Us
+						<div id="" style="width : 50px; padding-top:4px; float:right;">
+							<img src="images/icon_whiteRight.png" width="13" height="13" style="float:right;padding-right:20%;" onclick='contactUsFocus()'>
+						</div>
+					</div> </a>
+				</div>
+
+				<div class=dynamicDiv id="homescreenDownload" onclick="showInProgress();changedwFlag();displayContent();defaultNavigate();">
+					<a id="Downloads" class='anchorCategory test' href="#DownloadsPage" >
+					<div style='color:white;'>
+						Downloads
+						<div id="" style="width : 50px; padding-top:4px; float:right;">
+							<img src="images/icon_whiteRight.png" width="13" height="13" style="float:right;padding-right:20%;" >
+						</div>
+					</div> </a>
+				</div>
+				
+				
+
+
+				
+
+				<div class=dynamicDiv>
+					<a id="faq" class='anchorCategory test' href="#faqPage" onclick='clearSearchTipfromSearch();showFaqContent();displayContent()'>
+					<div style='color:white;'>
+						FAQs
+						<div id="" style="width : 50px; padding-top:4px; float:right;">
+							<img src="images/icon_whiteRight.png" width="13" height="13" style="float:right;padding-right:20%;" onclick='showFaqContent()'>
+						</div>
+					</div> 
+					</a>
+				</div>
+
+			
+				
+				<!-- --------------------------------------Sync--------------------------------------> 
+
+		<!-- 		<div class='dynamicDiv' id='SyncCheck'>
+					<a id="" class='anchorCategory test' onclick='syncLoaderStart()'>
+					<div style='color:white;'>
+						Sync
+						<div id="" style="width : 50px; float:right;">
+							<img src='images/icon_whiteRight.png' width="13" height="13" style="float:right;padding-right:20%;" />
+						</div>
+					</div> </a>
+				</div> -->
+				
+				
+
+				<!-- --------------------------------------Sync--------------------------------------> 
+				
+				
+				<div class=dynamicDivForLogout id="homescreenLogout" style="display:none;bottom: 5px">
+					<a id="logout1" class='anchorCategory test' onclick='postJSONData("logout","logout")'>
+					<div style='color:white; '>
+						Logout
+						<div id="" style="width : 50px; padding-top:4px; float:right;">
+							<img src="images/icon_whiteRight.png" width="13" height="13" style="float:right;padding-right:20%;" onclick='postJSONData("logout","logout")'>
+						</div>
+					</div> </a>
+				</div> 
+				<br>
+			</div>
+			<!-- end of the navigate div -->
+
+			
+							<div class="footerPadding" >
+			
+				<br/>
+				<!-- <label style="color: red; font-style: normal; font-size: 12px">Go to Accenture.com</label>
+				<br/> -->
+				<label style="font-size: 12px;margin-left:12px;">&copy; 2001 - 2014 Accenture. All Rights Reserved.</label>
+
+			</div>
+
+			<div data-position="fixed" data-tap-toggle ="false" align="center" style="background:grey" class="toggleButtonDiv">
+
+				<fieldset data-role="controlgroup" data-type="horizontal">
+					<table >
+						<tr>
+							<td><label style="font-size:16px;font-weight:bold">Online Mode</label></td>
+							<td>
+							<input class="abc" type="radio" align="center" name="radio-view1" id="radio-view-a1" value="online">
+							<label for="radio-view-a1" style="font-size:14px;">On</label>
+							<input class="xyz" type="radio"  name="radio-view1" id="radio-view-b1"   value="offline">
+							<label for="radio-view-b1" style="font-size:14px;">Off</label></td>
+						</tr>
+					</table>
+				</fieldset>
+
+			</div>
+
+		</div>
+
+		<!-- ******************************************** Page - Video ******************************************** -->
+
+		<div data-role="page" id="itemVideo" class="videoPage" >
+			<div data-role="header" class="header" style="position: fixed; top: 0px; width: 100%;z-index: 1">
+				<table style="width: 100%;z-index: 1;" border="0">
+					<tr>
+						<td id="audioBack" style="width: 20%;" class='backButtonClickEffect'>
+						<div data-rel="back" style="text-decoration: none;width:20%; height:100%; border:none; float:left;">
+							<img src="images/back_btn1.png" class="backBtnStyle" onClick="backnav('itemVideo');">
+						</div></td>
+						<td style="width: 50%;vertical-align: bottom;padding-bottom: 9px; height : 50px;" align="left"><h1 class="headerLabel" style="margin : 0px; padding : 0px;">Tech Time</h1></td>
+						<td style="width: 30%;vertical-align: bottom;margin : 0px; padding : 0px;"><label id="" class="labelLoginName" style="padding-bottom:13px;"></label></td>
+					</tr>
+				</table>
+
+			</div>
+			<div class="labelTop" style="margin-top: 65px;">
+				<label id="itemTitle"></label>
+			</div>
+			<!-- /header -->
+			<div data-role="content" data-theme="d" class="backgdMedia">
+				<br>
+				<div id="avPlayer" style="width : 100%; text-align : center;"></div>
+				<br>
+			</div>
+			<!-- /content -->
+			<div class="footerDiv" >
+				<div data-role="footer" class="footer">
+					<div class="btnRefLog">
+						<span style="float: left; padding-left: 5px;"> <a id="btnDeleteItem" data-corners="false" data-mini="true" data-inline="true"
+							data-role="button" class="btn btnRefLog">Delete</a> </span>
+						<!--  <a id="logout3" data-corners="false" data-mini="true"
+						data-inline="true" data-role="button" class="btn btnRefLog"><span>Logout</span></a><br>-->
+					</div>
+				</div>
+			</div>
+
+			<!-- <div data-role="footer" data-id="tt" data-position="fixed" style="background:grey">
+
+			<label for="flip-mini">Online mode </label>
+			<select name="flip-mini" id="flip-mini" data-role="slider" data-mini="true" class="testToggle" onchange="toggleFunction(this)">
+			<option value="off">Off</option>
+			<option value="on" selected>On</option>
+			</select>
+			</div> -->
+			<!-- /footer -->
+		</div>
+
+		<!-- ******************************************** detailMediaPage - Page ******************************************** -->
+
+		<div id="detailMediaPage" data-role="page" class="detailMedia" onload="hidePopup();" style='border:none;overflow :hidden;background-color:white;' >
+
+			<div  style="padding-top: 0px">
+				<table border="0" cellpadding="0" cellspacing="0" style="width: 100%; border: none; padding : 0px; margin: 0px;" class='headerStyle'>
+					<tr>
+						<td style="width: 50%;height:70px;"><img id="accLogoImg2" src="images/header_accentureRed.png" class="acnLog" /></td>
+						<td style="width: 50%;height:70px;" valign="bottom"><img id="emp2" src="images/header_empoweringYourself.png" class="eYourself" /></td>
+					</tr>
+					<tr>
+						<td style="width: 50% ;height:25px; background-color :#cbcccc" >
+							<img  id="highPerfImg1" src="images/header_highPerformance.png" class="highPerf">
+							</td>
+						<td style="width: 50%;height:25px;background-color :#cbcccc" align="right">
+						<div id='detailBack' data-rel="back" class="backBtnAnch" >
+							<img src="images/back.png" class="backBtn pushEffect" onclick="clearSearchTip();defaultNavigate();backnav('detailMediaPage');">
+						</div>
+						<a href="" class="navigatebtnAnch" >
+							<img src="images/navigate.png" class="navigatebtn pushEffect" onclick='showNavigateDiv("navigateDetailMediaPage")'>
+							</a>
+						</td>
+
+					</tr>
+					<tr>
+						<td colspan = "2" class="searchMainDiv">
+						<div class="searchTextboxDiv">
+							<input id="searchDetailMediaPage" type="text" placeholder="Search" title="Search" class="searchBar" style="padding:0px;margin:0px; margin-top:0px; margin-right:0px;left:0px;">
+						</div>
+						<div class="searchImgDiv">
+							<img src="images/icon_search.png" class="searchImg"  onclick='pageFlagSet("detailMediaPage");showSearchResult("searchDetailMediaPage","All", "All","null")'/>
+						</div></td>
+					</tr>
+				</table>
+
+			</div><!-- /header -->
+
+			<!-- /Popup Menu -->
+			<div id="a1" style="width: 100%;">
+				<div id="a2" style="width: 95%;border:none;">
+					<div style="width: 100%; background-color: orange; height: 20%;float: left;color:white">
+						Tech Time
+					</div>
+					<div style="width: 100%; background-color: white;height:80%;">
+						<label style="visibility: hidden;color:orange"></label>
+						<br />
+						<div  style="width: 50%;float: left;color: white;">
+							<div class="popupBtn" onclick="openDocument()"><img src="images/view_btn.png" width='100' height:'40' />
+							</div>
+						</div>
+						<div style="width: 50%;float: left;color: white;">
+							<div class="popupBtn" onclick='showPopup("a3")'><img src="images/delete_btn.png" width='100' height:'40' />
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+				<div id="a3" style="width: 95%;border:none;">
+					<div style="width: 100%; background-color: orange; height: 20%;float: left;color:white">
+						Tech Time
+					</div>
+					<div style="width: 100%; background-color: white;height:80%;">
+						<label style="color:orange" >Are you sure you want to delete this item?</label>
+						<br />
+						<div style="width: 50%;float: left;color: white;">
+							<div class="popupBtn" onclick="deleteDocument()"><img src="images/yes_btn.png" width='100' height:'40'/>
+							</div>
+						</div>
+
+						<div style="width: 50%;float: left;color: white;">
+							<div class="popupBtn" onclick="hidePopup()"><img src="images/no_btn.png" width='100' height:'40' />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div><!-- /Popup Menu End-->
+
+			<div id='navigateDetailMediaPage' class='navigateMenu'></div>
+			<!-- navigateMenu DIV -->
+
+			<div id="detailPageArea" style="background:#F0EFED;min-height:0px"></div>
+
+			<div id="prevNextContentArea" data-transition='slide' style="background:white; width : 100%; height :0px;border :none"></div>
+
+			<div class="detailPageDiv" id="spotItemContent" style="display : none; border :none;">
+
+			</div>
+			<div id='showWid'></div>
+
+			<br>
+			<!--  --------------------------------------------------->
+
+			<div class="footerPadding">
+				<br>
+				<br>
+				<!-- <label style="color: red; font-style: normal; font-size: 12px"><b>Go to Accenture.com</b></label>
+				<br/> -->
+				<label style="font-size: 12px;margin-left:12px;">&copy; 2001 - 2014 Accenture. All Rights Reserved.</label>
+			</div>
+
+			<div data-position="fixed" data-tap-toggle ="false" align="center" style="background:grey" class="toggleButtonDiv">
+				<fieldset data-role="controlgroup" data-type="horizontal">
+					<table >
+						<tr>
+							<td><label style="font-size:16px;font-weight:bold">Online Mode</label></td>
+							<td>
+							<input class="abc" type="radio" align="center" name="radio-view2" id="radio-view-a2" value="online">
+							<label for="radio-view-a2">On</label>
+							<input class="xyz" type="radio"  name="radio-view2" id="radio-view-b2" value="offline">
+							<label for="radio-view-b2">Off</label></td>
+						</tr>
+					</table>
+				</fieldset>
+			</div>
+
+		</div>
+
+		<!-- ******************************************** detailAuthor - Page ******************************************** -->
+
+		<div id="detailAuthor" data-role="page" class="detailAuthorPage" style='border:none;overflow :hidden' >
+
+			<div  style="padding-top: 0px">
+				<table border="0" cellpadding="0" cellspacing="0" style="width: 100%; border: none; padding : 0px; margin: 0px;" class='headerStyle'>
+					<tr>
+						<td style="width: 50%;height:70px;"><img id="accLogoImg3" src="images/header_accentureRed.png" class="acnLog" /></td>
+						<td style="width: 50%;height:70px;" valign="bottom"><img id="emp3" src="images/header_empoweringYourself.png" class="eYourself" /></td>
+					</tr>
+					<tr>
+						<td style="width: 50% ;height:25px; background-color :#cbcccc" ><img  id="highPerfImg2" src="images/header_highPerformance.png" class="highPerf"></td>
+						<td style="width: 50%;height : 25px;background-color :#cbcccc" align="right">
+						<div data-rel="back" class="backBtnAnch" ><img src="images/back.png" class="backBtn pushEffect" onClick="clearSearchTip(); defaultNavigate();backnav('detailAuthor');">
+						</div><a href="" class="navigatebtnAnch" ><img src="images/navigate.png" class="navigatebtn pushEffect" onclick='showNavigateDiv("navigateDetailAuthor")' ></a></td>
+
+					</tr>
+					<tr>
+						<td colspan = "2" class="searchMainDiv">
+						<div class="searchTextboxDiv">
+							<input id="searchdetailAuthor" type="text" placeholder="Search" title="Search" class="searchBar" style="padding:0px;margin:0px; margin-top:0px; margin-right:0px;left:0px;">
+						</div>
+						<div class="searchImgDiv">
+							<img src="images/icon_search.png" class="searchImg"  onclick='pageFlagSet("detailAuthor");showSearchResult("searchdetailAuthor","All","All","null")'/>
+						</div></td>
+					</tr>
+
+				</table>
+			</div><!-- /header -->
+
+			<div id='navigateDetailAuthor' class='navigateMenu'></div>
+			<!-- navigateMenu DIV -->
+
+			<div id="AuthorContentArea" style="background:#F0EFED"></div>
+
+			<!--  --------------------------------------------------->
+
+			<div class="footerPadding" >
+				<br>
+				<br>
+				<!-- 	<label style="color: red; font-style: normal; font-size: 12px"><b>Go to Accenture.com</b></label>
+				<br/> -->
+				<label style="font-size: 12px;margin-left:12px;">&copy; 2001 - 2014 Accenture. All Rights Reserved.</label>
+			</div>
+
+			<div data-position="fixed" data-tap-toggle ="false" align="center" style="background:grey" class="toggleButtonDiv">
+				<fieldset data-role="controlgroup" data-type="horizontal">
+					<table >
+						<tr>
+							<td><label style="font-size:16px;font-weight:bold">Online Mode</label></td>
+							<td>
+							<input class="abc" type="radio" align="center" name="radio-view3" id="radio-view-a3" value="online">
+							<label for="radio-view-a3">On</label>
+							<input class="xyz" type="radio"  name="radio-view3" id="radio-view-b3" value="offline">
+							<label for="radio-view-b3">Off</label></td>
+						</tr>
+					</table>
+				</fieldset>
+			</div>
+
+		</div>
+
+		<!-- ******************************************** spotlight - Page ******************************************** -->
+
+		<div id="spotlightPage" data-role="page" class="spotlightPage" style='border:none;overflow-x :hidden' >
+
+			<div  style="padding-top: 0px">
+				<table border="0" cellpadding="0" cellspacing="0" style="width: 100%; border: none; padding : 0px; margin: 0px;" class='headerStyle'>
+					<tr>
+						<td style="width: 50%;height:70px;"><img id="accLogoImg4" src="images/header_accentureRed.png" class="acnLog" /></td>
+						<td style="width: 50%;height:70px;" valign="bottom"><img id="emp4" src="images/header_empoweringYourself.png" class="eYourself" /></td>
+					</tr>
+					<tr>
+						<td style="width: 50% ;height:25px; background-color :#cbcccc" ><img  id="highPerfImg3" src="images/header_highPerformance.png" class="highPerf"></td>
+						<td style="width: 50%;height :25px;background-color :#cbcccc" align="right">
+						<div data-rel="back" class="backBtnAnch" ><img src="images/back.png" class="backBtn pushEffect" onClick="clearSearchTip(); defaultNavigate();backnav('spotlightPage');" >
+						</div><a href="" class="navigatebtnAnch" ><img src="images/navigate.png" class="navigatebtn pushEffect" onclick='showNavigateDiv("navigateSpotlightPage")'></a></td>
+
+					</tr>
+
+				</table>
+			</div><!-- /header -->
+
+			<br>
+			<br>
+
+			<div id='navigateSpotlightPage' class='navigateMenu'>
+
+			</div>
+			<!-- navigateMenu DIV -->
+			<div id="spotlightContentArea" >
+
+			</div>
+			
+		<!-- 	<div style="margin-left:4%">
+									<a href="#subscribePage" id="subNowSpot" onclick='showSubscribeContent()'  style="text-decoration:none;">
+	<img src="images/btn_subscribeNow.png" style="float:left; margin-left:4%;padding-right:2px;width:100px;padding-left:5px;background:#F8991D;" class = "buttonClickEffect" />
+
+									</a>
+								</div> -->
+
+				
+
+			<div class="footerPadding" style='bottom:10px;'>
+				<br>
+				<br>
+				
+				<!-- <label style="color: red; font-style: normal; font-size: 12px"><b>Go to Accenture.com</b></label>
+				<br/> -->
+				<label style="font-size: 12px;margin-left:12px;">&copy; 2001 - 2014 Accenture. All Rights Reserved.</label>
+			</div>
+			
+			
+			
+				<div data-position="fixed" data-tap-toggle ="false" align="center" style="background:grey" class="toggleButtonDiv">
+					<fieldset data-role="controlgroup" data-type="horizontal">
+					<table >
+						<tr>
+							<td><label style="font-size:16px;font-weight:bold">Online Mode</label></td>
+							<td>
+							<input class="abc" type="radio" align="center" name="radio-view50" id="radio-view-a50" value="online">
+							<label for="radio-view-a50">On</label>
+							<input class="xyz" type="radio"  name="radio-view50" id="radio-view-b50" value="offline">
+							<label for="radio-view-b50">Off</label></td>
+						</tr>
+					</table>
+				</fieldset>
+
+			</div>
+			
+		</div>
+
+		<!-- ******************************************** UpcomingEvents - Page *******************overflow-x:hidden************************* -->
+
+		<div id="UpcomingEventsPage" data-role="page" class="UpcomingEPage" style='border:none;overflow-x:hidden;' >
+			<!-- ******** Header **********-->
+
+			<div  style="padding-top: 0px">
+				<table border="0" cellpadding="0" cellspacing="0" style="width: 100%; border: none; padding : 0px; margin: 0px;" class='headerStyle'>
+					<tr>
+						<td style="width: 50%;height:70px;"><img id="accLogoImg5" src="images/header_accentureRed.png" class="acnLog" /></td>
+						<td style="width: 50%;height:70px;" valign="bottom"><img id="emp5" src="images/header_empoweringYourself.png" class="eYourself" /></td>
+					</tr>
+					<tr>
+						<td style="width: 50% ;height:25px; background-color :#cbcccc" ><img  id="highPerfImg4" src="images/header_highPerformance.png" class="highPerf"></td>
+						<td style="width: 50%;height : 25px;background-color :#cbcccc" align="right">
+						<div data-rel="back" class="backBtnAnch" ><img src="images/back.png" class="backBtn pushEffect" onClick="clearSearchTip(); defaultNavigate();backnav('UpcomingEventsPage');">
+						</div><a href="" class="navigatebtnAnch"  ><img src="images/navigate.png" class="navigatebtn pushEffect" onclick='showNavigateDiv("navigateUpcomingEventsPage")' ></a></td>
+
+					</tr>
+					<tr>
+						<td colspan = "2" class="searchMainDiv">
+						<div class="searchTextboxDiv">
+							<input id="searchUpcomingEventsPage" type="text" placeholder="Search" title="Search" class="searchBar" style="padding:0px;margin:0px; margin-top:0px; margin-right:0px;left:0px;">
+						</div>
+						<div class="searchImgDiv">
+							<img src="images/icon_search.png" class="searchImg"  onclick='pageFlagSet("UpcomingEventsPage");showSearchResult("searchUpcomingEventsPage","All","All","null")'/>
+						</div></td>
+					</tr>
+				</table>
+			</div><!-- /header -->
+
+			<br>
+
+			<table style='width:100%' border=0>
+				<tr>
+					<td style="width:20%" align="center"><img src="images/orange_icon_left.png" style="height:20%; width:25%; border:none" onclick="showUpcomingEventList('prev',null)"/></td>
+					<td style="width:60%" align="center"><label id="UpcomingEventsCurrMonth" style="font-size: 18px;font-family: AgfaRotisSans;"></label></td>
+					<td style="width:20%" align="center"><img src="images/orange_icon_right.png" style="height:20%; width:25%; border:none" onclick="showUpcomingEventList('next',null)"/></td>
+				</tr>
+			</table>
+			<hr style='width:100%;background-color: grey; color: grey; height:1px;'>
+			<div id="UpcomingEventsContentArea" style="background : #F0EFED;"></div>
+			<div id="noUpcomingEventsContentArea"></div>
+
+			<div id='navigateUpcomingEventsPage' class='navigateMenu'></div>
+			<!-- navigateMenu DIV -->
+
+			<!--  --------------------------------------------------->
+
+			<div class="footerPadding" >
+				<br>
+				<br>
+				
+				<!-- <label style="color: red; font-style: normal; font-size: 12px"><b>Go to Accenture.com</b></label> <br/> -->
+				<label style="font-size: 12px;margin-left:12px;">&copy; 2001 - 2014 Accenture. All Rights Reserved.</label>
+			</div>
+
+			<div data-position="fixed" data-tap-toggle ="false" align="center" style="background:grey" class="toggleButtonDiv">
+				<fieldset data-role="controlgroup" data-type="horizontal">
+					<table >
+						<tr>
+							<td><label style="font-size:16px;font-weight:bold">Online Mode</label></td>
+							<td>
+							<input class="abc" type="radio" align="center" name="radio-view4" id="radio-view-a4" value="online">
+							<label for="radio-view-a4">On</label>
+							<input class="xyz" type="radio"  name="radio-view4" id="radio-view-b4" value="offline">
+							<label for="radio-view-b4">Off</label></td>
+						</tr>
+					</table>
+				</fieldset>
+			</div>
+
+		</div>
+
+		<!-- ******************************************** subscribe - Page ******************************************** -->
+
+		<div id="subscribePage" data-role="page" class="subscribeTAPage" style='border:none;overflow-x:hidden' >
+			<!-- ******** Header **********-->
+
+			<div  style="padding-top: 0px">
+				<table border="0" cellpadding="0" cellspacing="0" style="width: 100%; border: none; padding : 0px; margin: 0px;" class='headerStyle'>
+					<tr>
+						<td style="width: 50%;height:70px;"><img id="accLogoImg6" src="images/header_accentureRed.png" class="acnLog" /></td>
+						<td style="width: 50%;height:70px;" valign="bottom"><img id="emp6" src="images/header_empoweringYourself.png" class="eYourself" /></td>
+					</tr>
+					<tr>
+						<td style="width: 50% ;height:25px; background-color :#cbcccc" ><img  id="highPerfImg5" src="images/header_highPerformance.png" class="highPerf"></td>
+						<td style="width: 50%;height :25px;background-color :#cbcccc" align="right">
+						<div data-rel="back" class="backBtnAnch" ><img src="images/back.png" class="backBtn pushEffect" onClick="clearSearchTip(); defaultNavigate();backnav('subscribePage');">
+						</div><a href="" class="navigatebtnAnch" ><img src="images/navigate.png" class="navigatebtn pushEffect" onclick='showNavigateDiv("navigateSubscribePage")' ></a></td>
+
+					</tr>
+					<tr>
+						<td colspan = "2" class="searchMainDiv">
+						<div class="searchTextboxDiv">
+							<input id="searchSubscribePage" type="text" placeholder="Search" title="Search" class="searchBar" style="padding:0px;margin:0px; margin-top:0px; margin-right:0px;left:0px;">
+						</div>
+						<div class="searchImgDiv">
+							<img src="images/icon_search.png" class="searchImg"  onclick='pageFlagSet("subscribePage");showSearchResult("searchSubscribePage","All","All","null")'/>
+						</div></td>
+					</tr>
+				</table>
+			</div><!-- /header -->
+			<div id='searchSubscribePageResult'></div>
+			<br>
+
+			<div style="width:95%; margin-left: 2.5%; border : none;  ">
+
+				<label style="font-size: 24px;font-family: AgfaRotisSans;font-weight:bold">Subscribe To Tech Time</label>
+				<br>
+				<br>
+				<label style="font-weight:bold">Subscribe to receive Email Update :</label>
+				<br>
+				<br>
+				<label style="border:none;font-size: small;"> When you subscribe to Tech Time, you will receive updates via email from Tech Time team whenever new videos or documents or events are uploaded. You can subscribe to specific Areas or Types. Please use the appropriate options and select “Subscribe Now" </label>
+				<br>
+				<br>
+				<br>
+			</div>
+			<div id="subscribePageContentArea" style="width:95%; margin-left:2.5%; border:none;background:#F0EFED;"></div>
+
+			<div id='navigateSubscribePage' class='navigateMenu'></div>
+			<!-- navigateMenu DIV -->
+
+			<br>
+
+			<div class="footerPadding" >
+				<br>
+				<br>
+				
+				<!-- <label style="color: red; font-style: normal; font-size: 12px"><b>Go to Accenture.com</b></label> <br/> -->
+				<label style="font-size: 12px;margin-left:12px;">&copy; 2001 - 2014 Accenture. All Rights Reserved.</label>
+			</div>
+
+			<div data-position="fixed" data-tap-toggle ="false" align="center" style="background:grey" class="toggleButtonDiv">
+				<fieldset data-role="controlgroup" data-type="horizontal">
+					<table >
+						<tr>
+							<td><label style="font-size:16px;font-weight:bold">Online Mode</label></td>
+							<td>
+							<input class="abc" type="radio" align="center" name="radio-view51" id="radio-view-a51" value="online">
+							<label for="radio-view-a51">On</label>
+							<input class="xyz" type="radio"  name="radio-view51" id="radio-view-b51" value="offline">
+							<label for="radio-view-b51">Off</label></td>
+							</td>
+						</tr>
+					</table>
+				</fieldset>
+			</div>
+
+			<!--  --------------------------------------------------->
+
+		</div>
+
+		<!-- ******************************************** aboutTectTime ******************************************** -->
+
+		<div id="aboutTectTimePage" data-role="page" style="background : #F0EFED;overflow-x :hidden" class="aboutTTpage" >
+
+			<!-- ******** Header **********-->
+
+			<div  style="padding-top: 0px">
+				<table border="0" cellpadding="0" cellspacing="0" style="width: 100%; border: none; padding : 0px; margin: 0px;" class='headerStyle'>
+					<tr>
+						<td style="width: 50%;height:70px;"><img id="accLogoImg7" src="images/header_accentureRed.png" class="acnLog" /></td>
+						<td style="width: 50%;height:70px;" valign="bottom"><img id="emp7" src="images/header_empoweringYourself.png" class="eYourself" /></td>
+					</tr>
+					<tr>
+						<td style="width: 50% ; height:25px;background-color :#cbcccc" ><img  id="highPerfImg7" src="images/header_highPerformance.png" class="highPerf"></td>
+						<td style="width: 50%;height : 25px;background-color :#cbcccc" align="right">
+						<div data-rel="back" class="backBtnAnch" ><img src="images/back.png" class="backBtn pushEffect" onClick="clearSearchTip(); defaultNavigate();backnav('aboutTectTimePage');">
+						</div><a href="" class="navigatebtnAnch" ><img src="images/navigate.png" class="navigatebtn pushEffect" onclick='showNavigateDiv("navigateAboutTectTimePage")' ></a></td>
+
+					</tr>
+					<tr>
+						<td colspan = "2" class="searchMainDiv">
+						<div class="searchTextboxDiv">
+							<input id="searchAboutTectTimePage" type="text" placeholder="Search" title="Search" class="searchBar" style="padding:0px;margin:0px; margin-top:0px; margin-right:0px;left:0px;">
+						</div>
+						<div class="searchImgDiv">
+							<img src="images/icon_search.png" class="searchImg"  onclick='pageFlagSet("aboutTectTimePage");showSearchResult("searchAboutTectTimePage","All","All","null")'/>
+						</div></td>
+					</tr>
+				</table>
+			</div><!-- /header -->
+
+			<div id='navigateAboutTectTimePage' class='navigateMenu'></div>
+			<!-- navigateMenu DIV -->
+
+			<div id="aboutTectTimeContentArea" style="background : #F0EFED; margin-left:4%; border:none" ></div>
+
+			<!--  --------------------------------------------------->
+
+			<div class="footerPadding" >
+				<br>
+				<br>
+				
+				<!-- <label style="color: red; font-style: normal; font-size: 12px"><b>Go to Accenture.com</b></label>
+				<br/> -->
+				<label style="font-size: 12px;margin-left:12px;">&copy; 2001 - 2014 Accenture. All Rights Reserved.</label>
+			</div>
+
+			<div data-position="fixed" data-tap-toggle ="false" align="center" style="background:grey" class="toggleButtonDiv">
+
+				<fieldset data-role="controlgroup" data-type="horizontal">
+					<table >
+						<tr>
+							<td><label style="font-size:16px;font-weight:bold">Online Mode</label></td>
+							<td>
+							<input class="abc" type="radio" align="center" name="radio-view5" id="radio-view-a5" value="online">
+							<label for="radio-view-a5">On</label>
+							<input class="xyz" type="radio"  name="radio-view5" id="radio-view-b5" value="offline">
+							<label for="radio-view-b5">Off</label></td>
+						</tr>
+					</table>
+				</fieldset>
+
+			</div>
+
+		</div>
+
+		<!-- ******************************************** Page - contactUs ******************************************** -->
+
+		<div data-role="page" id="contactUsPage" class="ContactUsPage"  >
+
+			<!-- ******** Header **********-->
+			<div  style="padding-top: 0px">
+
+				<table border="0" cellpadding="0" cellspacing="0" style="width: 100%; border: none; padding : 0px; margin: 0px;" class='headerStyle'>
+					<tr>
+						<td style="width: 50%;height:70px;"><img id="accLogoImg8" src="images/header_accentureRed.png" class="acnLog" /></td>
+						<td style="width: 50%;height:70px;" valign="bottom"><img id="emp8" src="images/header_empoweringYourself.png" class="eYourself" /></td>
+					</tr>
+					<tr>
+						<td style="width: 50% ;height:25px; background-color :#cbcccc" ><img  id="highPerfImg8" src="images/header_highPerformance.png" class="highPerf"></td>
+						<td style="width: 50%;height :25px;background-color :#cbcccc" align="right">
+						<div data-rel="back" class="backBtnAnch"><img src="images/back.png" class="backBtn pushEffect" onClick = "backnav('contactUsPage');clearSearchTip(); defaultNavigate();hitBackButton();">
+						</div><a href="" class="navigatebtnAnch" > <img src="images/navigate.png" class="navigatebtn pushEffect" onclick='showNavigateDiv("navigateContactUsPage")' ></a></td>
+
+					</tr>
+					<tr>
+						<td colspan = "2" class="searchMainDiv">
+						<div class="searchTextboxDiv">
+							<input id="searchContactUsPage" type="text" placeholder="Search" title="Search" class="searchBar" style="padding:0px;margin:0px; margin-top:0px; margin-right:0px;left:0px;">
+						</div>
+						<div class="searchImgDiv">
+							<img src="images/icon_search.png" class="searchImg"  onclick='pageFlagSet("contactUsPage");showSearchResult("searchContactUsPage","All","All","null")'/>
+						</div></td>
+					</tr>
+				</table>
+
+			</div><!-- /header -->
+
+			<!-- ******** Content **********-->
+			<div id='navigateContactUsPage' class='navigateMenu'></div>
+			<!-- navigateMenu DIV -->
+
+			<div data-role="content">
+
+				<div class="contentGrayBg" style="padding: 0px;background : #F0EFED">
+
+					<table style="width: 100%;" border="0">
+						<tr>
+							<td style="width: 100%; padding: 0px;" colspan="2">
+							<br>
+							<label style="font-size: 24px; padding-left: 15px;font-family: AgfaRotisSans;font-weight:bold">Contact Us</label>
+							<br>
+							<br>
+							</td>
+						</tr>
+					</table>
+
+					<div style="padding-left: 15px; padding-right: 15px">
+						<textarea id="commentTextArea" draggable="false" placeholder="Enter Your Comments Here" title="Enter Your Comments Here" 
+                            style="color: gray; font-style: italic; background: white; padding-left: 5px;
+                            height:200px;-webkit-border-radius: 0px;-moz-border-radius: 0px;border-radius: 0px;">Enter Your Comments Here</textarea>
+					</div>
+
+					<div style="">
+						<a href="#" id="clearText" data-role="button" data-mini="true" data-inline="true" style="background: orange; color: white; font-style:normal; text-shadow: none; width:40%; margin-left:4%;
+						float : left; -webkit-border-radius: 0px;-moz-border-radius: 0px;border-radius: 0px;" class = "buttonClickEffect">Clear</a>
+						<a href="#" id="submitContactForm" data-role="button" data-mini="true" data-inline="true" style="background: orange; color: white; font-style: normal; text-shadow: none; width: 40%;
+						margin-right:4%; float : right; -webkit-border-radius: 0px;-moz-border-radius: 0px;border-radius: 0px;" onclick="contactUsArea()" class = "buttonClickEffect">Submit</a>
+					</div>
+					<br>
+					<br>
+					<br/>
+
+				</div>
+				<!-- Content Gray Area -->
+
+			</div>
+			<!-- Content End -->
+
+			<!--  --------------------------------------------------->
+
+			<div class="footerPadding">
+				<br>
+				<br>
+				
+				<label style="font-size: 12px;margin-left:12px;">&copy; 2001 - 2014 Accenture. All Rights Reserved.</label>
+			</div>
+
+			<div data-position="fixed" data-tap-toggle ="false" align="center" style="background:grey" class="toggleButtonDiv">
+				<fieldset data-role="controlgroup" data-type="horizontal">
+					<table >
+						<tr>
+							<td><label style="font-size:16px;font-weight:bold">Online Mode</label></td>
+							<td>
+							<input class="abc" type="radio" align="center" name="radio-view6" id="radio-view-a6" value="online">
+							<label for="radio-view-a6">On</label>
+							<input class="xyz" type="radio"  name="radio-view6" id="radio-view-b6" value="offline">
+							<label for="radio-view-b6">Off</label></td>
+						</tr>
+					</table>
+				</fieldset>
+
+			</div>
+
+			<!--  --------------------------------------------------->
+
+		</div>
+
+		<!-- ******************************************** FAQ ******************************************** -->
+
+		<!-- Start of second page: # FAQ -->
+		<div id="faqPage" data-role="page" style="background : #F0EFED" class="FaqPage"   >
+
+			<!-- ******** Header **********-->
+
+			<div  style="padding-top: 0px">
+
+				<table border="0" cellpadding="0" cellspacing="0" style="width: 100%; border: none; padding : 0px; margin: 0px;" class='headerStyle'>
+					<tr>
+						<td style="width: 50%;height:70px;"><img id="accLogoImg9" src="images/header_accentureRed.png" class="acnLog" /></td>
+						<td style="width: 50%;height:70px;" valign="bottom"><img id="emp9" src="images/header_empoweringYourself.png" class="eYourself" /></td>
+					</tr>
+					<tr>
+						<td style="width: 50% ;height:25px; background-color :#cbcccc" ><img  id="highPerfImg9" src="images/header_highPerformance.png" class="highPerf"></td>
+						<td style="width: 50%;height :25px;background-color :#cbcccc" align="right">
+						<div data-rel="back" class="backBtnAnch" ><img src="images/back.png" class="backBtn pushEffect" onClick="clearSearchTip(); defaultNavigate();backnav('faqPage');">
+						</div><a href="" class="navigatebtnAnch" ><img src="images/navigate.png" class="navigatebtn pushEffect" onclick='showNavigateDiv("navigateFaqPage")'></a></td>
+
+					</tr>
+					<tr>
+						<td colspan = "2" class="searchMainDiv">
+						<div class="searchTextboxDiv">
+							<input id="searchFaqPage" type="text" placeholder="Search" title="Search" class="searchBar" style="padding:0px;margin:0px; margin-top:0px; margin-right:0px;left:0px;">
+						</div>
+						<div class="searchImgDiv">
+							<img src="images/icon_search.png" class="searchImg"  onclick='pageFlagSet("faqPage");showSearchResult("searchFaqPage","All","All","null")'/>
+						</div></td>
+					</tr>
+				</table>
+
+			</div>
+
+			<!-- /header -->
+
+			<div id='navigateFaqPage' class='navigateMenu'></div>
+			<!-- navigateMenu DIV -->
+
+			<br>
+
+			<label style="font-size: 24px;font-family: AgfaRotisSans;margin-left: 4%;font-weight: bold;">Frequently Asked Questions</label>
+			<br>
+			<br>
+
+			<div style="text-indent : 0px; margin-left: 4%;font-size:small;">
+				We are pleased to announce the launch of Tech Time, a tool that serves up robust content fast to immerse Accenture Technology Delivery & Geographies leaders in hot technology topics and help with meaningful client and Accenture conversations. It provides a deep-dive on technology topics - from delivery methodologies and tools to client case studies on new and emerging areas - through live webcasts, audiocasts, podcasts, presentations, transcripts and more, via your laptop and mobile device. More details on how to get started are below:
+			</div>
+			<br>
+
+			<div id="faqContentArea"></div>
+
+			<!--  --------------------------------------------------->
+
+			<div class="footerPadding" >
+				<br>
+				<br>
+				
+				<!-- <label style="color: red; font-style: normal; font-size: 12px"><b>Go to Accenture.com</b></label>
+				<br/> -->
+				<label style="font-size: 12px;margin-left:12px;">&copy; 2001 - 2014 Accenture. All Rights Reserved.</label>
+			</div>
+
+			<div data-position="fixed" data-tap-toggle ="false" align="center" style="background:grey" class="toggleButtonDiv">
+				<fieldset data-role="controlgroup" data-type="horizontal">
+					<table >
+						<tr>
+							<td><label style="font-size:16px;font-weight:bold">Online Mode</label></td>
+							<td>
+							<input class="abc" type="radio" align="center" name="radio-view7" id="radio-view-a7" value="online">
+							<label for="radio-view-a7">On</label>
+							<input class="xyz" type="radio"  name="radio-view7" id="radio-view-b7" value="offline">
+							<label for="radio-view-b7">Off</label></td>
+						</tr>
+					</table>
+				</fieldset>
+
+			</div>
+
+			<!-- --------------------------------------------------->
+
+		</div>
+
+		<!-- ******************************************** LIST PAGE OF TECHNOLOGY AREA RESULT ******************************************** -->
+
+		<div id="TAListResult" data-role="page" class="TAListResultPage" style='border:none;overflow-x:hidden;background:white'  >
+
+			<!-- ******** Header **********-->
+
+			<div  style="padding-top: 0px">
+				<table border="0" cellpadding="0" cellspacing="0" style="width: 100%; border: none; padding : 0px; margin: 0px;" class='headerStyle'>
+					<tr>
+						<td style="width: 50%;height:70px;"><img id="accLogoImg10" src="images/header_accentureRed.png" class="acnLog" /></td>
+						<td style="width: 50%;height:70px;" valign="bottom"><img id="emp10" src="images/header_empoweringYourself.png" class="eYourself" /></td>
+					</tr>
+					<tr>
+						<td style="width: 50% ;height:25px; background-color :#cbcccc" ><img id="highPerfImg10" src="images/header_highPerformance.png" class="highPerf"></td>
+						<td style="width: 50%;height :25px;background-color :#cbcccc" align="right">
+						<div data-rel="back" class="backBtnAnch" ><img src="images/back.png" class="backBtn pushEffect" onClick="backnav('TAListResult');clearSearchTip(); defaultNavigate();refreshList()">
+						</div><a href="" class="navigatebtnAnch" ><img src="images/navigate.png" class="navigatebtn pushEffect" onclick='showNavigateDiv("navigateTAListResult")' ></a></td>
+
+					</tr>
+					<tr>
+						<td colspan = "2" class="searchMainDiv">
+						<div class="searchTextboxDiv">
+							<input id="searchTAListResult" type="text" placeholder="Search" title="Search" class="searchBar" style="padding:0px;margin:0px; margin-top:0px; margin-right:0px;left:0px;">
+						</div>
+						<div class="searchImgDiv">
+							<img src="images/icon_search.png" class="searchImg"  onclick='pageFlagSet("TAListResult");showSearchResult("searchTAListResult","All","All","null")'/>
+						</div></td>
+					</tr>
+				</table>
+			</div><!-- /header -->
+
+			<br>
+
+			<div id='navigateTAListResult' class='navigateMenu'></div>
+			<!-- navigateMenu DIV 
+
+	<table border='1' style="margin-left:4%;"> -->
+		<table border='0' class="filters">
+				<tr>
+					<td>
+					<table border='0'>
+						<tr>
+							<td><label style="font-size:small"><span style="color:orange;font-size:small"> Type : &nbsp; <span style="color:black;font-size:small;"></span> </span> </label>
+		</td>
+		<td>
+		<ul class="navigation">
+			<li>
+				<label id="type" style="text-decoration:none; color:black; font-family:Helvetica,Arial,sans-serif;font-size:small;font-weight:bold;">All</label>&nbsp; <img id="type1" href="#" src="images/orange_icon_down.png" width="15" height="10" onclick="generateClick('type')">
+				<ul class="submenu" >
+					<li>
+						<a href="#" onclick='changeDropDown("type","All","All")' style='font-weight:normal;width:200px;'>ALL</a>
+					</li>
+					<!--   <li>
+						<a href="#" onclick='changeDropDown("type","Audios","Audios")' style='font-weight:normal'><img src='images/icon_audio.png' height="10" width="12" style="margin-right:5%;padding-top:2px;padding-bottom:2px;"/>Audios</a>
+					</li>
+					<li>
+						<a href="#" onclick='changeDropDown("type","Videos","Videos")' style='font-weight:normal'><img src='images/icon_video.png' height="10" width="12" style="margin-right:5%;padding-top:2px;padding-bottom:2px;">Videos</a>
+					</li> -->
+					<!--Start Akshay format change-->
+                        <li>
+                           <a href="#" onclick='changeDropDown("type","TechnologySessions","Technology Sessions")' style='font-weight:normal;width:200px;'>
+                              <img src='images/icon_video.png' height="14" width="20" style="margin-right:5%;padding-top:2px;padding-bottom:2px;">Technology Sessions
+                           </a>
+                        </li>
+                    <!--end-->
+                   <li>
+						<a href="#" onclick='changeDropDown("type","Documents","Documents")' style='font-weight:normal;width:200px;'><img src='images/icon_document.png' height="10" width="20" style="margin-right:5%;padding-top:2px;padding-bottom:2px;">Documents</a>
+					</li>
+                    <li>
+						<a href="#" onclick='changeDropDown("type","Interviews","Interviews")' style='font-weight:normal;width:200px;'><img src='images/icon_interview.png' height="11" width="20" style="margin-right:5%;padding-top:2px;padding-bottom:2px;">Interviews</a>
+					</li>
+					<li>
+						<a href="#" onclick='changeDropDown("type","PanelDiscussions","Panel Discussions")' style='font-weight:normal;width:200px;'><img src='images/icon_panelDiscussion.png' height="12" width="20" style="margin-right:5%;padding-top:2px;padding-bottom:2px;">Panel Discussions</a>
+					</li>
+		
+		
+			        <li>
+                        <a href="#" onclick='changeDropDown("type","TechnologyConferences","Technology Conferences")' style='font-weight:normal;width:200px;'>
+                            <img src='images/icon_techConf.png' height="14" width="12" style="margin-right:5%;padding-top:2px;padding-bottom:2px;padding-left:8px;">Technology Conferences
+                        </a>
+                    </li>
+
+				
+					<!-- <li>
+					<a href="#" onclick='changeDropDown("type","Events","Events")' style='font-weight:normal'><img src='images/icon_event.png' height="10" width="12" style="margin-right:5%;padding-top:2px;padding-bottom:2px;">Events</a>
+					</li> -->
+				</ul>
+			</li>
+		</ul>
+		<br>
+		</td>
+		</tr>
+		</table>
+		</td>
+		</tr>
+
+		<tr>
+			<td>
+			<table border='0'>
+				<tr>
+					<td>
+					<div>
+						<span style="color:orange;font-size:small">Language:</span>
+					</div></td><td>
+					<ul class="navigation">
+						<li>
+							<label id="language" style="font-family:Helvetica,Arial,sans-serif;font-size:small;font-weight:bold;">All</label>&nbsp; <img id="language1" href="#" src="images/orange_icon_down.png" width="10" height="10" onclick="generateClick('language')">
+							<ul class="submenu3">
+								<li>
+									<a href="#" onclick='changeDropDown("language","All","All")' style='font-weight:smaller;font-weight:bold;'>All</a>
+								</li>
+								<li>
+									<a href="#" onclick='changeDropDown("language","en","English")' style='font-weight:smaller;font-weight:bold;'>English</a>
+								</li>
+								<li>
+									<a href="#" onclick='changeDropDown("language","es","Spanish")' style='font-weight:smaller;font-weight:bold;'>Spanish</a>
+								</li>
+							</ul>
+						</li>
+					</ul></td>
+				</tr>
+			</table></td>
+
+		</tr>
+		<tr>
+			<td >
+			<table border='0'>
+				<tr>
+					<td>
+					<ul class="navigation">
+						<li>
+							<label id='topic' href="#" style="text-decoration:none; color:orange; font-family:Helvetica,Arial,sans-serif;font-size: smaller;">Topic</label>&nbsp; <img id='topic1' href="#"  src="images/orange_icon_down.png" width="10" height="10" onclick="generateClick('topic')">
+							<div id='sbmDiv'>
+								<ul class="submenu1">
+
+							</div>
+						</li>
+					</ul></td>
+				</tr>
+			</table></td>
+
+		</tr>
+
+		</table>
+
+		<!--<span id="selCatName" style="font-size:20px;margin-left:15px;font-size:smaller;"></span> -->
+		<h3 class='selCatNameClass'><span id="selCatName"></span><span id="numberOfItems" style="font-size: 15px; padding-left: 10px;font-family: AgfaRotisSans;font-weight:bolder;color:gray"></span></h3>
+		<br>
+		<div id="TAListResultContentArea" style="background : #F0EFED;"></div>
+		<div id="noTAListResultContentArea"></div>
+
+		<!--  --------------------------------------------------->
+
+		<div class="footerPadding">
+			<br>
+			<br>
+			<!-- 	<label style="color: red; font-style: normal; font-size: 12px"><b>Go to Accenture.com</b></label>
+			<br/> -->
+			<label style="font-size: 12px;margin-left:12px;">&copy; 2001 - 2014 Accenture. All Rights Reserved.</label>
+		</div>
+
+		<div data-position="fixed" data-tap-toggle ="false" align="center" style="background:grey" class="toggleButtonDiv">
+			<fieldset data-role="controlgroup" data-type="horizontal">
+				<table>
+					<tr>
+						<td><label style="font-size:16px;font-weight:bold">Online Mode</label></td>
+						<td>
+						<input class="abc" type="radio" align="center" name="radio-view8" id="radio-view-a8" value="online">
+						<label for="radio-view-a8">On</label>
+						<input class="xyz" type="radio"  name="radio-view8" id="radio-view-b8" value="offline">
+						<label for="radio-view-b8">Off</label></td>
+					</tr>
+				</table>
+			</fieldset>			
+		</div>
+
+		<!--  --------------------------------------------------->
+
+		</div>
+
+		<!-- ******************************************** qnaPage ******************************************** -->
+
+		<div id="qnaPage" data-role="page" style="background : #F0EFED" class="QAPage" >
+
+			<div  style="padding-top: 0px; background : #818181; height:30px;">
+
+				<div data-rel="back" style="text-decoration: none;width:20%; height:100%; border:none; float:left;background : #818181;">
+					<img src="images/back_btn_w.png" height="40%" width="80%" onClick="clearSearchTip();backnav('qnaPage')" style="border:none;margin-top:0px;margin-left:3px; padding-top :10px;" class='backButtonClickEffect'>
+				</div>
+
+			</div><!-- /header -->
+			<br>
+			<div style="width:100%;border:none; background:#ff9900; text-align:left;" >
+				<div style=" margin-left:4%;width:92%">
+					<label id="qnaTitle" style="color:white; font-size:18px;"> Q & A For It's Not Your Father's SAP</label>
+				</div>
+			</div>
+			<br>
+			<div id="qnaPageContentArea" style=" width:94%; background :#F0EFED;margin-left:4%;margin-right:6%;"></div>
+			<br>
+
+		</div>
+
+		
+
+		<!-- ******************************************** SEARCH RESULT PAGE******************************************** -->
+
+		<div id="searchResultPage" data-role="page" class="searchRPage" style='overflow-x:hidden;background:white' >
+
+			<!-- ******** Header **********-->
+
+			<div  style="padding-top: 0px">
+				<table border="0" cellpadding="0" cellspacing="0" style="width: 100%; border: none; padding : 0px; margin: 0px;" class='headerStyle'>
+					<tr>
+						<td style="width: 50%;height:70px;"><img id="accLogoImg12" src="images/header_accentureRed.png" class="acnLog" /></td>
+						<td style="width: 50%;height:70px;" valign="bottom"><img id="emp12" src="images/header_empoweringYourself.png" class="eYourself" /></td>
+					</tr>
+					<tr>
+						<td style="width: 50% ;height:25px; background-color :#cbcccc" ><img id="highPerfImg12" src="images/header_highPerformance.png" class="highPerf"></td>
+						<td style="width: 50%;height :25px;background-color :#cbcccc" align="right">
+						<div class="backBtnAnch" >
+							<img src="images/back.png" class="backBtn pushEffect" onclick='backnav("searchResultPage");clearSearchTipfromSearch(); defaultNavigate();'>
+						</div><a href="" class="navigatebtnAnch" > <img src="images/navigate.png" class="navigatebtn pushEffect" onclick='showNavigateDiv("navigateResultPage")'> </a></td>
+
+					</tr>
+					<tr>
+						<td colspan = "2" class="searchMainDiv">
+						<div class="searchTextboxDiv">
+							<input id="searchsearchResultPage" type="text" placeholder="Search" title="Search" class="searchBar" style="padding:0px;margin:0px; margin-top:0px; margin-right:0px;left:0px;">
+						</div>
+						<div class="searchImgDiv">
+							<img src="images/icon_search.png" class="searchImg" onclick='pageFlagSet("searchResultPage");showSearchResult("searchsearchResultPage","All","All","null")' />
+						</div></td>
+					</tr>
+				</table>
+
+			</div><!-- /header -->
+
+			<br>
+			<div id='navigateResultPage' class='navigateMenu'></div>
+			<!-- navigateMenu DIV -->
+
+			<table style="margin-left:4%">
+				<tr>
+					<td><label><span style="color:orange;"> Type : &nbsp; <span style="color:black;"></span></span> </label></td>
+
+					<td>
+					<ul class="navigation">
+						<li>
+							<label id="typeS" style="text-decoration:none; font-family:Helvetica,Arial,sans-serif;font-size: smaller;color:black;font-weight:bold;">All</label>&nbsp; <img id="typeS1" href="#" src="images/orange_icon_down.png" width="15" height="10" onclick="generateClick('typeS')">
+
+							<ul class="submenu2" >
+								<li>
+									<a href="#" onclick='showSearchResult("prevSearch","All","All","null")' style='font-weight:normal;width:200px;' >All</a>
+								</li>
+							<!--  	<li>
+									<a href="#" onclick='showSearchResult("prevSearch","Audios","Audios","null")' style='font-weight:normal'><img src='images/icon_audio.png' height="10" width="12" style="margin-right:5%; padding-left:8px;padding-top:2px;padding-bottom:2px;">Audios</a>
+								</li>
+								<li>
+									<a href="#" onclick='showSearchResult("prevSearch","Videos","Videos","null")' style='font-weight:normal'><img src='images/icon_video.png' height="10" width="12" style="margin-right:5%; padding-left:8px;padding-top:2px;padding-bottom:2px;">Videos</a>
+								</li>-->
+								<li>
+									<a href="#" onclick='showSearchResult("prevSearch","TechnologySessions","Technology Sessions","null")' style='font-weight:normal;width:200px;'><img src='images/icon_video.png' height="14" width="20" style="margin-right:5%;padding-top:2px;padding-bottom:2px;padding-left:8px;">Technology Sessions</a>
+								</li>
+								<li>
+									<a href="#" onclick='showSearchResult("prevSearch","PanelDiscussions","Panel Discussions","null")' style='font-weight:normal;width:200px;'><img src='images/icon_panelDiscussion.png' height="12" width="20" style="margin-right:5%; padding-left:8px;padding-top:2px;padding-bottom:2px;" >Panel Discussions</a>
+								</li>
+								<li>
+									<a href="#" onclick='showSearchResult("prevSearch","Interviews","Interviews","null")' style='font-weight:normal;width:200px;'><img src='images/icon_interview.png' height="10" width="20" style="margin-right:5%; padding-left:8px;padding-top:2px;padding-bottom:2px;">Interviews</a>
+								</li>
+								<li>
+									<a href="#" onclick='showSearchResult("prevSearch","Documents","Documents","null")' style='font-weight:normal;width:200px;'><img src='images/icon_document.png' height="10" width="20" style="margin-right:5%; padding-left:8px;padding-top:2px;padding-bottom:2px;">Documents</a>
+								</li>
+								<li>
+									<a href="#" onclick='showSearchResult("prevSearch","TechnologyConferences","Technology Conferences","null")' style='font-weight:normal;width:200px;'><img src='images/icon_techConf.png' height="12" width="20" style="margin-right:5%;padding-top:2px;padding-bottom:2px;padding-left:8px;">Technology Conferences</a>
+								</li>
+								<!--  <li>
+								<a href="#" onclick='showSearchResult("prevSearch","Events","Events")' style='font-weight:normal'><img src='images/icon_event.png' height="10" width="12" style="margin-right:5%; padding-left:8px;padding-top:2px;padding-bottom:2px;">Events</a>
+								</li> -->
+							</ul>
+						</li>
+					</ul>
+					<br>
+					</td>
+
+				</tr>
+
+				<tr>
+					<td><label> <span id='sortByDateSearchField' style='color:black'></span> </label></td>
+					<td></td>
+				</tr>
+
+			</table>
+
+			<br>
+			<span style="margin-left:4%;padding-bottom:3px"> Search Results for '<label id='searchLabel'></label>'</span>
+
+			<div id='searchResultDiv' style='background:#F0EFED'></div>
+			<!-- SEARCH DIV -->
+			<div id='nosearchResultDiv'></div>
+			<!-- SEARCH DIV -->
+
+			<!--  --------------------------------------------------->
+
+			<div class="footerPadding" >
+				<br>
+				<br>
+				<!-- <label style="color: red; font-style: normal; font-size: 12px"><b>Go to Accenture.com</b></label> <br/> -->
+				<label style="font-size: 12px;margin-left:12px;">&copy; 2001 - 2014 Accenture. All Rights Reserved.</label>
+			</div>
+
+			<div data-position="fixed" data-tap-toggle ="false" align="center" style="background:grey" class="toggleButtonDiv">
+				<fieldset data-role="controlgroup" data-type="horizontal">
+					<table>
+						<tr>
+							<td><label style="font-size:16px;font-weight:bold">Online Mode</label></td><td>
+							<input class="abc" type="radio" align="center" name="radio-view9" id="radio-view-a9" value="online">
+							<label for="radio-view-a9">On</label>
+							<input class="xyz" type="radio"  name="radio-view9" id="radio-view-b9" value="offline">
+							<label for="radio-view-b9">Off</label></td>
+						</tr>
+					</table>
+				</fieldset>
+			</div>
+			<!--  --------------------------------------------------->
+
+		</div>
+
+		<!-- ******************************************** downloads ******************************************** -->
+		<div id="DownloadsPage" data-role="page" class="DownPage" onload="showInProgress();" >
+			<div style="padding-top: 0px">
+				<table border="0" cellpadding="0" cellspacing="0" style="width: 100%; border: none; padding : 0px; margin: 0px;" class='headerStyle'>
+					<tr>
+						<td style="width: 50%;height:70px;"><img id="accLogoImg13" src="images/header_accentureRed.png" class="acnLog" /></td>
+						<td style="width: 50%;height:70px;" valign="bottom"><img id="emp13" src="images/header_empoweringYourself.png" class="eYourself" /></td>
+					</tr>
+					<tr>
+						<td style="width: 50% ;height:25px; background-color :#cbcccc" ><img id="highPerfImg13" src="images/header_highPerformance.png" class="highPerf"></td>
+						<td style="width: 50%;height :25px;background-color :#cbcccc" align="right">
+						<div data-rel="back" class="backBtnAnch" ><img src="images/back.png" class="backBtn pushEffect" onClick="clearSearchTip(); defaultNavigate();backnav('DownloadsPage');">
+						</div><a href="" class="navigatebtnAnch" ><img src="images/navigate.png" class="navigatebtn pushEffect" onclick='showNavigateDiv("navigateDownloadsPage")' ></a></td>
+					</tr>
+					<tr>
+						<td colspan = "2" class="searchMainDiv">
+						<div class="searchTextboxDiv">
+							<input id="searchDownloadsPage" type="text" placeholder="Search" title="Search" class="searchBar" style="padding:0px;margin:0px; margin-top:0px; margin-right:0px;left:0px;">
+						</div>
+						<div class="searchImgDiv">
+							<img src="images/icon_search.png" class="searchImg"  onclick='pageFlagSet("DownloadsPage");showSearchResult("searchDownloadsPage","All","All","null")'/>
+						</div></td>
+					</tr>
+				</table>
+			</div>
+
+			<h3 style="margin-left:4%">Downloads </h3>
+
+			<div>
+				<table style="width:100%;">
+					<tr>
+						<td style="padding-left:15px;"><label id="inProgressDownloads" onclick="switchDownloadsDiv('inProgress')" style="color:orange">In progress</label><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><label id="completedDownloads" onclick="switchDownloadsDiv('allDownloads'); CheckAllDownloads();" style="font-weight:bolder;">All Downloads</label></td>
+					</tr>
+				</table>
+			</div>
+
+			<div id='navigateDownloadsPage' class='navigateMenu'></div>
+			<!-- navigateMenu DIV -->
+			<br>
+
+			<img id="showProgressBarImage" src='images\progressBar.gif' style='width:100%;height:30px;display:none;' />
+
+			<div id="showProgressBar" style='font-size:15px; min-height:50px; background:none; width:100%;'></div>
+			<div id="allDownloads" style='font-size:15px; min-height:50px; background:none; width:100%;display:none;'></div>
+
+			<div data-position="fixed" data-tap-toggle ="false" align="center" style="background:grey" class="toggleButtonDiv">
+				<fieldset data-role="controlgroup" data-type="horizontal">
+					<table>
+						<tr>
+							<td><label style="font-size:16px;font-weight:bold">Online Mode</label></td><td>
+							<input class="abc" type="radio" align="center" name="radio-view10" id="radio-view-a10" value="online">
+							<label for="radio-view-a10">On</label>
+							<input class="xyz" type="radio"  name="radio-view10" id="radio-view-b10" value="offline">
+							<label for="radio-view-b10">Off</label></td>
+						</tr>
+					</table>
+				</fieldset>
+			</div>
+
+		</div>
+ 		<!-- *********************************************TechWatch ******************************************************** -->
+ 
+ 		<div id="techWatchPage" data-role="page" style="background : #F0EFED;overflow-x :hidden" class="" >
+
+			<!-- ******** Header **********-->
+
+			<div  style="padding-top: 0px">
+				<table border="0" cellpadding="0" cellspacing="0" style="width: 100%; border: none; padding : 0px; margin: 0px;" class='headerStyle'>
+					<tr>
+						<td style="width: 50%;height:70px;"><img id="accLogoImg711" src="images/header_accentureRed.png" class="acnLog"  style='margin-left:10px'/></td>
+						<td style="width: 50%;height:70px;" valign="bottom"><img id="emp711" src="images/header_empoweringYourself.png" class="eYourself" /></td>
+					</tr>
+					<tr>
+						<td style="width: 50% ; height:25px;background-color :#cbcccc" ><img  id="highPerfImg711" src="images/header_highPerformance.png" class="highPerf"></td>
+						<td style="width: 50%;height : 25px;background-color :#cbcccc" align="right">
+						<div data-rel="back" class="backBtnAnch" ><img src="images/back.png" class="backBtn pushEffect" onClick="clearSearchTip(); defaultNavigate();backnav('techWatchPage');">
+						</div><a href="" class="navigatebtnAnch" ><img src="images/navigate.png" class="navigatebtn pushEffect" onclick='showNavigateDiv("navigateTechWatchPage")'></a></td>
+
+					</tr>
+					<tr>
+						<td colspan = "2" class="searchMainDiv">
+						<div class="searchTextboxDiv">
+							<input id="searchTechWatchPage" type="text" placeholder="Search" title="Search" class="searchBar" style="padding:0px;margin:0px; margin-top:0px; margin-right:0px;left:0px;">
+						</div>
+						<div class="searchImgDiv">
+							<img src="images/icon_search.png" class="searchImg"  onclick='pageFlagSet("techWatchPage");showSearchResult("searchTechWatchPage","All","All","null")'/>
+						</div></td>
+					</tr>
+				</table>
+			</div><!-- /header -->
+
+			
+			 <br/>
+          <!-- <div style="padding-left:2%;width:100%;background:#555555;padding-top:8px;padding-bottom:10px;" id="techWatchPublication" onclick='generateTechWatchPublicationList();'>
+                    <label style='font-size:17px;padding-left:2px;color:orange;font-weight:bolder;'>Select Date:</label><label id='techWatchPubDateLabel' style='font-size:17px;color:white;padding-left:2px;font-family:AgfaRotisSans;font-weight:bolder;'></label><img style='float:right;padding-right:3%' src='images/orange_icon_right.png' width='20px' height='20px;'/>
+             </div><br/>-->         
+             
+             
+               <div id='techWatchHeader' ></div>
+			<br>
+			
+			<div id='navigateTechWatchPage' class='navigateMenu'></div>
+			
+
+			<div id="techWatchContentArea" style="background:#F0EFED"></div>
+
+<!--			
+
+
+			<!--  --------------------------------------------------->
+
+			<div class="footerPadding" >
+				<br>
+				<br>
+				
+				<!-- <label style="color: red; font-style: normal; font-size: 12px"><b>Go to Accenture.com</b></label>
+				<br/> -->
+				<label style="font-size: 12px;margin-left:12px;">&copy; 2001 - 2014 Accenture. All Rights Reserved.</label>
+			</div>
+
+			<div data-position="fixed" data-tap-toggle ="false" align="center" style="background:grey" class="toggleButtonDiv">
+
+				<fieldset data-role="controlgroup" data-type="horizontal">
+					<table >
+						<tr>
+							<td><label style="font-size:16px;font-weight:bold">Online Mode</label></td>
+							<td>
+							<input class="abc" type="radio" align="center" name="radio-view59" id="radio-view-a59" value="online">
+							<label for="radio-view-a59">On</label>
+							<input class="xyz" type="radio"  name="radio-view59" id="radio-view-b59" value="offline">
+							<label for="radio-view-b59">Off</label></td>
+						</tr>
+					</table>
+				</fieldset>
+
+			</div>
+
+		</div>
+
+  <!--------------TechWatch Select Issue page ----->        
+        <!--   <div id="techwatchSelectIssuePage" data-role="page" class="applicationPage" style="overflow-x: hidden;" style='background:#F0EFED;'>
+            <div style='display:inline-block;width:100%;' ><br/><label style='font-size:24px;padding-left:8px;font-family:AgfaRotisSans;font-weight:bolder;'>Tech Watch - Publications</label></div><br/>            
+            <div style='display:inline-block;width:100%;background:orange;text-align:center;padding-top:8px;padding-bottom:8px;' onclick="$.mobile.changePage('#techWatchPage');"><label style='font-size:20px;font-family:AgfaRotisSans;font-weight:bolder;color:white;'>Back to Tech Watch</label></div><br/>                      
+            <div id="techWatchPublicationsList" style='width:100%;z-index:10;'></div>                                                                                   
+          </div> 
+ 
+  -->
+ 
+		<!-- ******************************************** loggedout  ********************************************         -->
+		<div id="loggedOutPage" data-role="page" style="background : #F0EFED" class="logOutPage" >
+			<div  style="padding-top: 0px">
+				<table border="0" cellpadding="0" cellspacing="0" style="width: 100%; border: none; padding : 0px; margin: 0px;" class='headerStyle'>
+					<tr>
+						<td style="width: 50%;height:70px;"><img id="accLogoImg14" src="images/header_accentureRed.png" class="acnLog" /></td>
+						<td style="width: 50%;height:70px;" valign="bottom"><img id="emp14" src="images/header_empoweringYourself.png" class="eYourself" /></td>
+					</tr>
+				</table>
+			</div>
+			<hr style='width:100%;background-color: grey; color: grey; height:1px;'>
+			</a>
+			<div id="errormsg" style="position:absolute; width:100%; text-align:center; top:46%">
+				<span style="font-size:14px;">You are Successfully logged out from application.
+					<br>
+					Please close the application.</span>
+					<br/><br/>
+			<b>Or</b>
+			<br/><br/>
+				<div id='reloginTechTime' style='text-align:center;' onclick='reloginToTT();'>
+					<img src="images/reloginTechTime.png"  onclick='reloginToTT();'/>
+				</div>
+            </div>
+			
+            
+
+
+		</div>
+		
+		
+
+		<!-- error page- -->
+		<div id="errorPage" data-role="page" >
+			<div data-role="header" class="header" >
+				<table border="0" cellpadding="0" cellspacing="0" style="width: 100%; border: none; padding : 0px; margin: 0px;" class='headerStyle'>
+					<tr>
+						<td style="width: 50%;height:70px;"><img id="accLogoImg15" src="images/header_accentureRed.png" class="acnLog" /></td>
+						<td style="width: 50%;height:70px;" valign="bottom"><img id="emp15" src="images/header_empoweringYourself.png" class="eYourself" /></td>
+					</tr>
+
+				</table>
+			</div>
+			<div id="errorString" class="labelMsg" style="position:absolute;top:50%;width:95%;margin: auto;text-align:center">
+				TechTime application is not available.
+				<br/>
+				Please close the application and try again later.
+			</div>
+		</div>
+
+
+		<!-- ******************************************** Playlists Page ******************************************** -->
+        
+       <div id="PlaylistsPage" data-role="page" style="background:#F0EFED;overflow-x: hidden;">
+            
+              
+                <div  style="padding-top: 0px">
+				<table border="0" cellpadding="0" cellspacing="0" style="width: 100%; border: none; padding : 0px; margin: 0px;" class='headerStyle'>
+					<tr>
+						<td style="width: 50%;height:70px;"><img id="accLogoImg7111" src="images/header_accentureRed.png" class="acnLog"  style='margin-left:10px'/></td>
+						<td style="width: 50%;height:70px;" valign="bottom"><img id="emp7111" src="images/header_empoweringYourself.png" class="eYourself" /></td>
+					</tr>
+					<tr>
+						<td style="width: 50% ; height:25px;background-color :#cbcccc" ><img  id="highPerfImg7111" src="images/header_highPerformance.png" class="highPerf"></td>
+						<td style="width: 50%;height : 25px;background-color :#cbcccc" align="right">
+						<div data-rel="back" class="backBtnAnch" ><img src="images/back.png" class="backBtn pushEffect" onClick="clearSearchTip(); defaultNavigate();backnav('PlaylistsPage');">
+						</div><a href="" class="navigatebtnAnch" ><img src="images/navigate.png" class="navigatebtn pushEffect" onclick='showNavigateDiv("navigatePlaylistsPage");'></a></td>
+
+					</tr>
+					<tr>
+						<td colspan = "2" class="searchMainDiv">
+						<div class="searchTextboxDiv">
+							<input id="searchPlaylistsPage" type="text" placeholder="Search" title="Search" class="searchBar" style="padding:0px;margin:0px; margin-top:0px; margin-right:0px;left:0px;">
+						</div>
+						<div class="searchImgDiv">
+							<img src="images/icon_search.png" class="searchImg"  onclick='pageFlagSet("PlaylistsPage");showSearchResult("searchPlaylistsPage","All","All","null")'/>
+						</div></td>
+					</tr>
+				</table>
+			</div>
+                
+                <div id='navigatePlaylistsPage' class='navigateMenu'></div>
+                
+                    <!--<div id="playlistsPageContentArea" style="background:#F0EFED;width:100%;"></div>-->
+            <table style="width: 100%;" border="0">
+                    <tr>
+                        <td style="width: 100%; padding: 0px;" colspan="2">
+                            <br><label style="font-size: 24px; padding-left: 15px;font-family: AgfaRotisSans;font-weight:bolder;">Playlists</label><br><br>
+                        </td>
+                        <td style="width:50%;padding-right:10px;">
+                            <img src="images/sharePlaylistsBtn.png"  class="buttonClickEffect" onclick="displaySharePlaylistPage();">
+                        </td>
+ 
+                    </tr>
+                </table>
+               <!-- <div id="userPlaylistsHeader" style="width:100%;background:orange;padding:5px;"></div>-->
+               
+                <div id="userPlaylistsDiv" style="width:103%;background-color:#F0EFED;"></div>
+         
+            
+<div class="footerPadding" >
+                    
+                           <br/>
+                           <!-- <label style="color: red; font-style: normal; font-size: 12px">Go to Accenture.com</label>
+                           <br/> -->
+                           <label style="font-size: 12px;margin-left:12px;">&copy; 2001 - 2014 Accenture. All Rights Reserved.</label>
+ 
+                     </div>
+ 
+                     <div data-position="fixed" data-tap-toggle ="false" align="center" style="background:grey" class="toggleButtonDiv">
+ 
+                           <fieldset data-role="controlgroup" data-type="horizontal">
+                                  <table >
+                                         <tr>
+                                                <td><label style="font-size:16px;font-weight:bold">Online Mode</label></td>
+                                                <td>
+                                                <input class="abc" type="radio" align="center" name="radio-view112" id="radio-view-a112" value="online">
+                                                <label for="radio-view-a112" style="font-size:14px;">On</label>
+                                                <input class="xyz" type="radio"  name="radio-view112" id="radio-view-b112"   value="offline">
+                                                <label for="radio-view-b112" style="font-size:14px;">Off</label></td>
+                                         </tr>
+                                  </table>
+                           </fieldset>
+ 
+                     </div>
+            
+    </div> 
+        <!-- ******************************************** Playlists Page ******************************************** -->
+        
+        <!-- ******************************************** Playlists Items Page ******************************************** -->
+        
+      <div id="playlistsItemPage" data-role="page" style="background:#F0EFED;overflow-x:hidden;">
+            
+              
+                <div  style="padding-top: 0px">
+				<table border="0" cellpadding="0" cellspacing="0" style="width: 100%; border: none; padding : 0px; margin: 0px;" class='headerStyle'>
+					<tr>
+						<td style="width: 50%;height:70px;"><img id="accLogoImg7112" src="images/header_accentureRed.png" class="acnLog"  style='margin-left:10px'/></td>
+						<td style="width: 50%;height:70px;" valign="bottom"><img id="emp7112" src="images/header_empoweringYourself.png" class="eYourself" /></td>
+					</tr>
+					<tr>
+						<td style="width: 50% ; height:25px;background-color :#cbcccc" ><img  id="highPerfImg7112" src="images/header_highPerformance.png" class="highPerf"></td>
+						<td style="width: 50%;height : 25px;background-color :#cbcccc" align="right">
+						<div data-rel="back" class="backBtnAnch" ><img src="images/back.png" class="backBtn pushEffect" onClick="clearSearchTip();defaultNavigate();backnav('playlistsItemPage');">
+						</div><a href="" class="navigatebtnAnch" ><img src="images/navigate.png" class="navigatebtn pushEffect" onclick='showNavigateDiv("navigateplaylistsItemPage");'></a></td>
+
+					</tr>
+					<tr>
+						<td colspan = "2" class="searchMainDiv">
+						<div class="searchTextboxDiv">
+							<input id="searchplaylistsItemPage" type="text" placeholder="Search" title="Search" class="searchBar" style="padding:0px;margin:0px; margin-top:0px; margin-right:0px;left:0px;">
+						</div>
+						<div class="searchImgDiv">
+							<img src="images/icon_search.png" class="searchImg"  onclick='pageFlagSet("playlistsItemPage");showSearchResult("searchplaylistsItemPage","All","All","null")'/>
+						</div></td>
+					</tr>
+				</table>
+			</div>
+			
+			
+
+                
+                <div id='navigateplaylistsItemPage' class='navigateMenu'></div>
+                
+    
+                
+              <table style="width:100%;background:#F0EFED;margin-bottom:2%;" border="0">
+                    <tr>
+                        <td style="width:100%;padding:0px;" colspan="2">
+                            <br><label id="userPlaylistsItemHeader" style="font-size:24px;padding-left:15px;font-family:AgfaRotisSans;font-color:black;color:black;display:table-cell;"></label>
+                        </td>
+                    </tr>
+                </table>
+              	
+              	<div id="userPlaylistsRenameDeleteOption" style="width:100%;margin-bottom:2%;background-color:#F0EFED;">
+                    <label id="userPlaylistsRenameOption" style="font-size:16px;padding-left:15px;font-family:AgfaRotisSans;color:orange;" onclick="showRenamePlaylistForm()">Rename</label><label style="font-size:17px;padding-left:5px;font-family:AgfaRotisSans;font-color:gray;">|</label>
+                    <label id="userPlaylistsDeleteOption" style="font-size:16px;font-family:AgfaRotisSans;color:orange;" onclick='showDeletePlaylistConfirmation();'>Delete</label>
+                </div>
+              	
+                 
+                  <table style="width:100%;background-color:#F0EFED;margin-bottom:2%;" border="0">
+                    <tr>
+                        <td style="width:100%;padding:0px;" colspan="2">
+                            <br><label id="userPlaylistsItemHeader" style="font-size:24px;padding-left:15px;font-family:AgfaRotisSans;font-color:black;color:black;display:table-cell;"></label>
+                        </td>
+                    </tr>
+                </table>
+                
+                
+             
+                
+                
+				<div id="renamePlaylistForm" style="width:100%;background-color:#F0EFED;text-align:center;display:none;">
+                    <hr style='width:100%;background-color:grey;color:grey;height:3px;margin:0px;'>
+                    <div style='width:100%;background-color:orange;height:30px;padding-top:6px;'><label style="font-size:16px;font-weight:bold;color:white;">New Playlist Name</label></div><br/>
+                    <input id="renamePlaylistNamePlaceholder" class='defaultInputTypeField' type="text" style="width:95%;margin:0 auto;" >
+   
+                   <div style="width:100%;background-color:#F0EFED;"><label id="Label3" style="font-size:14px;padding-left:2px;font-family:AgfaRotisSans;color:black;">Please avoid using special characters.</label></div>
+                        <table style="width:100%;">
+                            <tr>
+                                <td style="witdh:50%;"><img src='images/btn_rename.png'  class = "buttonClickEffect" onclick="renamePlaylist();"></td>
+                                <td style="witdh:50%;"><img src='images/btn_cancel.png'  class = "buttonClickEffect" onclick="cancelRenamePlaylistAction();"></td>                           
+                            </tr>
+                        </table>
+                       
+                        <hr style='width:100%;background-color:grey;color:grey;height:3px;margin:0px;'>
+                        </div>
+               
+                
+                <div id="deletePlaylistConfirmation" style="width:100%;background-color:#F0EFED;text-align:center;display:none;">
+                    <hr style='width:100%;background-color:grey;color:grey;height:3px;margin:0px;'>
+                    <div style='width:100%;background-color:orange;height:30px;padding-top:6px;'><label style="font-size:16px;font-weight:bold;color:white;">Delete Playlist</label></div><br/>
+                    <label id="deletePlaylistConfirmationLabel" style="font-size:16px;color:black;"></label>
+                        <table style="width:100%;">
+                            <tr>
+                                <td style="witdh:50%;"><img src='images/btn_delete.png'  class = "buttonClickEffect" onclick="deletePlaylist();" ></td>
+                            <td style="witdh:50%;"><img src='images/btn_cancel.png'  class = "buttonClickEffect" onclick="cancelDeletePlaylistAction();"></td>
+                            </tr>
+                        </table>
+                       
+                        <hr style='width:100%;background-color:grey;color:grey;height:3px;margin:0px;'>
+                        </div>
+               
+                
+                <div id="renamePlaylistNoName" style="width:100%;background-color:#F0EFED;text-align:center;display:none;">
+                    <hr style='width:100%;background-color:grey;color:grey;height:3px;margin:0px;'>
+                    <div style='width:100%;background-color:orange;height:30px;padding-top:6px;'><label style="font-size:16px;font-weight:bold;color:white;">Playlist Name</label></div><br/>
+                    <table style="width:100%;">
+                        <tr>
+                            <td style="witdh:100%;">Please enter a valid Playlist Name.</td>
+                        </tr>
+                        <tr>
+                            <td style="witdh:100%;"><button type="button" onclick="showRenamePlaylistForm();">Ok</button></td>
+                        </tr>
+                    </table>
+                   
+                    <hr style='width:100%;background-color:grey;color:grey;height:3px;margin:0px;'>
+                </div>
+               
+                <div id="renamePlaylistNoInternet" style="width:100%;background-color:#F0EFED;text-align:center;display:none;">
+                    <hr style='width:100%;background-color:grey;color:grey;height:3px;margin:0px;'>
+                    <div style='width:100%;background-color:orange;height:30px;padding-top:6px;'><label style="font-size:16px;font-weight:bold;color:white;">No Internet Connection</label></div><br/>
+                    <table style="width:100%;">
+                        <tr>
+                            <td style="witdh:100%;">Please check your internet connection to Rename a Playlist.</td>
+                        </tr>
+                        <tr>
+                            <td style="witdh:100%;"><button type="button" onclick="cancelRenamePlaylistAction();">Ok</button></td>
+                        </tr>
+                    </table>
+                   
+                    <hr style='width:100%;background-color:grey;color:grey;height:3px;margin:0px;'>
+                </div>
+               
+                <div id="deletePlaylistNoInternet" style="width:100%;background-color:#F0EFED;text-align:center;display:none;">
+                    <hr style='width:100%;background-color:grey;color:grey;height:3px;margin:0px;'>
+                    <div style='width:100%;background-color:orange;height:30px;padding-top:6px;'><label style="font-size:16px;font-weight:bold;color:white;">No Internet Connection</label></div><br/>
+                    <table style="width:100%;">
+                        <tr>
+                            <td style="witdh:100%;">Please check your internet connection to Delete a Playlist.</td>
+                        </tr>
+                        <tr>
+                            <td style="witdh:100%;"><button type="button" onclick="cancelDeletePlaylistAction();">Ok</button></td>
+                       </tr>
+                    </table>
+                   
+                    <hr style='width:100%;background-color:grey;color:grey;height:3px;margin:0px;'>
+                </div>
+            
+             <div id="playlistItemPlayerDiv" style="margin:10px auto;width:90%;background-color:#F0EFED;">
+                   
+                </div>
+                
+                
+             
+                
+     
+                
+               
+               <video id='PlaylistPlayer' controls autoplay style='float:left;height:480px;margin:10px;border:1px solid silver;background:black;display:none;'>
+              	     <source src="" type="video/mp4" >
+              	</video>
+              	
+                <label id='currentTrack' style='color:orange'> </label>
+                
+                
+                            
+
+               
+                <div id='nowPlaylingDiv' style='width:100%;display:table-cell;'>
+                    <label id="nowPlayingLabel" style="font-size:18px;padding-left:15px;font-family:AgfaRotisSans;color:black;font-weight:bold;">Now Playing: </label>
+                    <label id="nowPlayingItemTitle" style="font-size:18px;font-family:AgfaRotisSans;color:orange;font-weight:100;"></label>
+                </div> <br/>
+             
+                 <div id="playlistItemsDiv" style="overflow-x:hidden;width:100%;background-color:#F0EFED;" ></div>
+                 <div id='noPlayListItemsDiv'></div>
+                <div id="playlistItemsLoadMoreDiv" style="width:100%;background-color:#F0EFED;"></div>    
+                
+
+            <div class="footerPadding" style="background-color:#F0EFED;">
+			
+				<br/>
+				
+				<label style="font-size: 12px;margin-left:12px;">&copy; 2001 - 2014 Accenture. All Rights Reserved.</label>
+
+			</div>
+
+			<div data-position="fixed" data-tap-toggle ="false" align="center" style="background:grey" class="toggleButtonDiv">
+
+				<fieldset data-role="controlgroup" data-type="horizontal">
+					<table >
+						<tr>
+							<td><label style="font-size:16px;font-weight:bold">Online Mode </label></td>
+							<td>
+							<input class="abc" type="radio" align="center" name="radio-view101" id="radio-view-a101" value="online">
+							<label for="radio-view-a101" style="font-size:14px;">On</label>
+							<input class="xyz" type="radio"  name="radio-view101" id="radio-view-b101"   value="offline">
+							<label for="radio-view-b101" style="font-size:14px;">Off</label></td>
+						</tr>
+					</table>
+				</fieldset>
+
+			</div>
+            
+    </div> 
+        
+        <!-- ******************************************** Playlists items end Page ******************************************** -->
+        
+        
+        
+        
+        
+        
+        
+        
+                <!-- ******************************************** Share Playlists Page ******************************************** -->
+        
+       <div id="sharePlaylistsPage" data-role="page" style="background:#FFFFFF; overflow-x:hidden;">
+            
+            <div  style="padding-top: 0px">
+                           <table border="0" cellpadding="0" cellspacing="0" style="width: 100%; border: none; padding : 0px; margin: 0px;" class='headerStyle'>
+                                  <tr>
+                                         <td style="width: 50%;height:70px;"><img id="accLogoImg7112" src="images/header_accentureRed.png" class="acnLog"  style='margin-left:10px'/></td>
+                                         <td style="width: 50%;height:70px;" valign="bottom"><img id="emp7112" src="images/header_empoweringYourself.png" class="eYourself" /></td>
+                                  </tr>
+                                  <tr>
+                                         <td style="width: 50% ; height:25px;background-color :#cbcccc" ><img  id="highPerfImg7112" src="images/header_highPerformance.png" class="highPerf"></td>
+                                         <td style="width: 50%;height : 25px;background-color :#cbcccc" align="right">
+                                         <div data-rel="back" class="backBtnAnch" ><img src="images/back.png" class="backBtn pushEffect" onClick="clearSearchTip(); defaultNavigate();backnav('sharePlaylistsPage');">
+                                         </div><a href="" class="navigatebtnAnch" ><img src="images/navigate.png" class="navigatebtn pushEffect" onclick='showNavigateDiv("navigateSharePlaylistsPage");'></a></td>
+
+                                  </tr>
+                                  <tr>
+            <td colspan = "2" class="searchMainDiv">
+                <div class="searchTextboxDiv">
+                <input id="searchSharePlaylistsPage" type="text" placeholder="Search" title="Search"  class="searchBar input" style="text-indent:12px; padding:0px;margin:0px; margin-top:0px; margin-right:0px;left:0px;">
+                </div>
+                <div class="searchImgDiv buttonClickEffect">
+                <img src="images/icon_search.png" class="searchImg buttonClickEffect"  onclick='pageFlagSet("sharePlaylistsPage");showSearchResult("searchSharePlaylistsPage","All","All","null")'/>
+                </div>
+            </td>
+            </tr>
+                           </table>
+                     </div><!-- /header -->
+                
+                <div id='navigateSharePlaylistsPage' class='navigateMenu'></div>
+               
+                <table style="width:100%;" border="0">
+                    <tr>
+                        <td style="width: 100%; padding: 0px;" colspan="2">
+                            <br><label style="font-size: 24px; padding-left:2%;font-family: AgfaRotisSans;font-weight:bolder;">Share Playlists</label><br><br>
+                        </td>
+                       
+                    </tr>
+                </table>
+               
+                <div style="width:100%;">
+                    <label id="sharePlaylistHeaderText" style="padding-left:10px;color:#000;font-family:Gotham, 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:14px;">Playlists you have selected to Share:</label>
+                    <br/>
+                    <div id="sharedPlaylistsNames" style="width:100%;padding-top:10px;">
+                    </div>
+                    <div style="width:100%;">
+                        <label id="myPlayList" style="display:table-cell;padding-left:10px;color:#000;font-family:Gotham, 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:16px;">Please enter the mail id of the person you want to share with:</label>
+                    </div>
+                    <div style="width:100%;padding-top:15px;">
+                        <label id="Label1" style="padding-left:10px;color:#000;font-family:Gotham, 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:16px;font-weight:bold;color:#666">(e.g:someone@accenture.com)</label>
+                    </div>
+                   
+                    <div id="shareWithInputForm" style="width:100%;padding-top:15px;">
+                        <div id="inputMailFormDiv1" style="width:75%;float:left;padding-left:2%;margin-bottom:10px;">
+                            <input id="playlistRecepient1" class="recepientMailAddress" type="text" style="width:95%;margin:auto;text-indent:3px;" name="email" placeholder="Enter Accenture Mail ID" onfocus="appendEmailDomain(this);">
+                                </div>
+                        <div style="width:17%;float:right"> </div>
+                       
+                        <div id="inputMailFormDiv2" style="width:75%;float:left;padding-left:2%;margin-bottom:10px;">
+                            <input id="playlistRecepient2" class="recepientMailAddress" type="text" style="width:95%;margin:auto;text-indent:3px;" name="email" placeholder="Enter Accenture Mail ID" onfocus="appendEmailDomain(this);">
+                                </div>
+                        <div style="width:17%;float:right"> </div>
+                       
+                        <div id="inputMailFormDiv3" style="width:75%;float:left;padding-left:2%;margin-bottom:10px;">
+                            <input id="playlistRecepient3" class="recepientMailAddress" type="text"  style="width:95%;margin:auto;text-indent:3px;" name="email" placeholder="Enter Accenture Mail ID" onfocus="appendEmailDomain(this);">
+                                </div>
+                        <div id="addRemoveOptionsDiv3" style="width:17%;float:right">
+                            <img id="addEmailFieldButton3" src="images/addOption.png" class = "buttonClickEffect"  style="height:24px;width:24px;" onClick="addEmailField()"> </div>
+                    </div>
+                   
+                </div>
+               
+                <div style="width:100%;display:inline-block;margin-top:15px;padding-left:10px;"><img id="sharePlaylistBtn" class = "buttonClickEffect"  src="images/sharePlaylistBtn.png" onClick="generateSharePlaylistRecepientsList()"></div>
+                 <div class="footerPadding" >
+			
+				<br/>
+				
+				<label style="font-size: 12px;margin-left:12px;">&copy; 2001 - 2014 Accenture. All Rights Reserved.</label>
+
+			</div>
+
+			<div data-position="fixed" data-tap-toggle ="false" align="center" style="background:grey" class="toggleButtonDiv">
+
+				<fieldset data-role="controlgroup" data-type="horizontal">
+					<table >
+						<tr>
+							<td><label style="font-size:16px;font-weight:bold">Online Mode </label></td>
+							<td>
+							<input class="abc" type="radio" align="center" name="radio-view1011" id="radio-view-a1011" value="online">
+							<label for="radio-view-a1011" style="font-size:14px;">On</label>
+							<input class="xyz" type="radio"  name="radio-view1011" id="radio-view-b1011"   value="offline">
+							<label for="radio-view-b1011" style="font-size:14px;">Off</label></td>
+						</tr>
+					</table>
+				</fieldset>
+
+			</div>
+            
+        </div> 
+        
+        <!-- ******************************************** Share Playlists Page ******************************************** -->
+        
+        
+        <!-- ******************************************** Add to Playlist Page ******************************************** -->
+        
+        <div id="addToPlaylistPage" data-role="page" style="background:#FFFFFF;overflow-x:hidden;">
+            <div  style="padding-top: 0px">
+<table border="0" cellpadding="0" cellspacing="0" style="width: 100%; border: none; padding : 0px; margin: 0px;" class='headerStyle'>
+<tr>
+<td style="width: 50%;height:70px;"><img id="accLogoImg7" src="images/header_accentureRed.png" class="acnLog" /></td>
+<td style="width: 50%;height:70px;" valign="bottom"><img id="emp7" src="images/header_empoweringYourself.png" class="eYourself" /></td>
+</tr>
+<tr>
+<td style="width: 50% ; height:25px;background-color :#cbcccc" ><img  id="highPerfImg7" src="images/header_highPerformance.png" class="highPerf"></td>
+<td style="width: 50%;height : 25px;background-color :#cbcccc" align="right">
+<div data-rel="back" class="backBtnAnch" ><img src="images/back.png" class="backBtn pushEffect" onClick="clearSearchTip(); defaultNavigate();backnav('addToPlaylistPage');">
+</div><a href="" class="navigatebtnAnch" ><img src="images/navigate.png" class="navigatebtn pushEffect" onclick='showNavigateDiv("navigateAddToPlaylistPage")' ></a></td>
+
+</tr>
+<tr>
+<td colspan = "2" class="searchMainDiv">
+<div class="searchTextboxDiv">
+<input id="searchAddToPlaylistPage" type="text" placeholder="Search" title="Search" class="searchBar" style="padding:0px;margin:0px; margin-top:0px; margin-right:0px;left:0px;">
+</div>
+<div class="searchImgDiv">
+<img src="images/icon_search.png" class="searchImg"  onclick='pageFlagSet("addToPlaylistPage");showSearchResult("searchAddToPlaylistPage","All","All","null")'/>
+</div></td>
+</tr>
+</table>
+</div><!-- /header -->
+            
+            
+            <div id='navigateAddToPlaylistPage' class='navigateMenu'></div>
+               
+                <table style="width:100%;background:#FFFFFF;margin-bottom:2%;" border="0">
+                    <tr>
+                        <td style="width:100%;padding:0px;" colspan="2">
+                            <br><label id="addToPlaylistHeader" style="font-size:24px;padding-left:15px;font-family:AgfaRotisSans;font-color:black;color:black;">Add to Playlist</label>
+                        </td>
+                    </tr>
+                </table>
+               
+                <div id="createNewPlaylistForm" style="width:100%;background-color:#F0EFED;text-align:center;display:none;">
+                    <hr style='width:100%;background-color:grey;color:grey;height:3px;margin:0px;'>
+                    <div style='width:100%;background-color:orange;height:30px;padding-top:6px;'><label style="font-size:16px;font-weight:bold;color:white;">Playlist Name</label></div>
+                    <br/>
+                    <input id="newPlaylistNamePlaceholder" class='defaultInputTypeField' type="text" style="width:95%;margin:0 auto;-webkit-input-placeholder:red;" placeholder="New Playlist Name">
+                     <div style="width:100%"><label id="Label2" style="font-size:14px;padding-left:2px;font-family:AgfaRotisSans;color:black;">Please avoid using special characters.</label></div>
+                        <table style="width:100%;">
+                            <tr>
+                                <td style="witdh:50%;"><img src='images/btn_createpl.png'  class = "buttonClickEffect" onclick="createNewPlaylist();"></td>
+                                <td style="witdh:50%;"><img src='images/btn_cancel.png'  class = "buttonClickEffect" onclick="cancelNewPlaylistCreation();"></td>                               
+                            </tr>
+                        </table>
+                       
+                    <hr style='width:100%;background-color:grey;color:grey;height:3px;margin:0px;'>
+                </div>
+               
+                <div id="createPLNoInternet" style="width:100%;background-color:#F0EFED;text-align:center;display:none;">
+                    <hr style='width:100%;background-color:grey;color:grey;height:3px;margin:0px;'>
+                    <div style='width:100%;background-color:orange;height:30px;padding-top:6px;'><label style="font-size:16px;font-weight:bold;color:white;">No Internet Connection</label></div><br/>
+                        <table style="width:100%;">
+                            <tr>
+                                <td style="witdh:100%;">Please check your internet connection to Create a New Playlist.</td>
+                            </tr>
+                            <tr>
+                                <td style="witdh:100%;"><img src='images/btn_ok.png'  class="buttonClickEffect" onclick="cancelNewPlaylistCreation();"></td>
+                            </tr>
+                        </table>
+                       
+                        <hr style='width:100%;background-color:grey;color:grey;height:3px;margin:0px;'>
+                    </div>
+               
+                <div id="createPLNoName" style="width:100%;background-color:#F0EFED;text-align:center;display:none;">
+                    <hr style='width:100%;background-color:grey;color:grey;height:3px;margin:0px;'>
+                    <div style='width:100%;background-color:orange;height:30px;padding-top:6px;'><label style="font-size:16px;font-weight:bold;color:white;">Playlist Name</label></div><br/>
+                    <table style="width:100%;">
+                        <tr>
+                            <td style="witdh:100%;">Please enter a valid Playlist Name.</td>
+                        </tr>
+                        <tr>
+                           <td style="witdh:100%;"><img src='images/btn_ok.png'  class="buttonClickEffect" onclick="showCreateNewPlaylistForm();"></td>
+                        </tr>
+                    </table>
+                   
+                    <hr style='width:100%;background-color:grey;color:grey;height:3px;margin:0px;'>
+                </div>
+               
+                
+                <div class='linkTransition' id='createNewPlaylistTab' style='height:30px;width:100%;background:orange;text-align:center;color:white;padding-top:5px;font-size:16px;' title='5' onclick="showCreateNewPlaylistForm();"><b>Create New Playlist</b></div>
+            <div id="listOfPlaylists" style="width:100%;background-color:#F0EFED;"></div>
+                           <div class="footerPadding" >
+                     
+                           <br/>
+                           
+                           <label style="font-size: 12px;margin-left:12px;">&copy; 2001 - 2014 Accenture. All Rights Reserved.</label>
+
+                     </div>
+
+                     <div data-position="fixed" data-tap-toggle ="false" align="center" style="background:grey" class="toggleButtonDiv">
+
+                           <fieldset data-role="controlgroup" data-type="horizontal">
+                                  <table >
+                                         <tr>
+                                                <td><label style="font-size:16px;font-weight:bold">Online Mode </label></td>
+                                                <td>
+                                                <input class="abc" type="radio" align="center" name="radio-view13" id="radio-view-a13" value="online">
+                                                <label for="radio-view-a13" style="font-size:14px;">On</label>
+                                                <input class="xyz" type="radio"  name="radio-view13" id="radio-view-b13" value="offline">
+                                                <label for="radio-view-b13" style="font-size:14px;">Off</label></td>
+                                         </tr>
+                                  </table>
+                           </fieldset>
+
+                     </div>
+          
+            
+        </div>
+        
+        <!-- ******************************************** Add to Playlist Page ******************************************** -->  
+        
+        
+        
+           <!-- ******************************************** Contribute - Page ******************************************** -->
+        
+        <div id="ContributePage" data-role="page" class="applicationPage" style="overflow-x: hidden;">
+            
+            <div class="applicationPageContent">
+                			<div  style="padding-top: 0px">
+				<table border="0" cellpadding="0" cellspacing="0" style="width: 100%; border: none; padding : 0px; margin: 0px;" class='headerStyle'>
+					<tr>
+						<td style="width: 50%;height:70px;"><img id="accLogoImg7" src="images/header_accentureRed.png" class="acnLog" /></td>
+						<td style="width: 50%;height:70px;" valign="bottom"><img id="emp7" src="images/header_empoweringYourself.png" class="eYourself" /></td>
+					</tr>
+					<tr>
+						<td style="width: 50% ; height:25px;background-color :#cbcccc" ><img  id="highPerfImg7" src="images/header_highPerformance.png" class="highPerf"></td>
+						<td style="width: 50%;height : 25px;background-color :#cbcccc" align="right">
+						<div data-rel="back" class="backBtnAnch" ><img src="images/back.png" class="backBtn pushEffect" onClick="clearSearchTip(); defaultNavigate();backnav('aboutTectTimePage');">
+						</div><a href="" class="navigatebtnAnch" ><img src="images/navigate.png" class="navigatebtn pushEffect" onclick='showNavigateDiv("navigateContributePage")' ></a></td>
+
+					</tr>
+					<tr>
+						<td colspan = "2" class="searchMainDiv">
+						<div class="searchTextboxDiv">
+							<input id="searchContributePage" type="text" placeholder="Search" title="Search" class="searchBar" style="padding:0px;margin:0px; margin-top:0px; margin-right:0px;left:0px;">
+						</div>
+						<div class="searchImgDiv">
+							<img src="images/icon_search.png" class="searchImg"  onclick='pageFlagSet("ContributePage");showSearchResult("searchContributePage","All","All","null")'/>
+						</div></td>
+					</tr>
+				</table>
+			</div><!-- /header -->
+               
+                
+                
+                <div id='navigateContributePage' class='navigateMenu'></div> <!-- navigateMenu DIV -->
+                
+                <table style="width:100%;" border="0">
+                    <tr>
+                        <td style="width: 100%; padding:0px;" colspan="2">
+                            <br><label style="font-size: 24px;padding-left:2%;font-family: AgfaRotisSans;font-weight:bolder;">Contribute</label><br><br>
+                        </td>
+                    </tr>
+                </table>
+          
+                
+                <div id='assistedRecordingSection' style="width:100%;display:none;">
+                   <!-- <div id='assistedRecordingHeader' style="width:100%;padding-left:2%;padding-right:2%;">
+                        <strong>Assisted Recording</strong>
+                    </div> -->
+                    <div style="width:100%;">
+                        <table style="width:100%;">
+                            <tr>
+                                <td style="padding-left:5px;"><label id="assistedRecordingTab" style="font-size:14px;color:black;font-weight:bolder" onclick="showRecordingOption('assisted');">Assisted Recording</label><label>&nbsp;&nbsp;|&nbsp;&nbsp;</label><label id="selfRecordingTab" style="font-size:14px;font-weight:normal;color:orange" onclick="showRecordingOption('self');">Submit Video/Audio</label></td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <div id='assistedRecordingDescription' style="width:100%;padding-left:2%;padding-right:2%;margin-top:8px;">
+                        <p>You can reach out to us and we guide you to record the video throughout the process.</p>
+                        <p>If you wish to contribute, please fill out the form below. One of our Program Leads will reach out to you shortly.</p>
+                    </div>
+                    
+                    <div id='assistedRecordingForm' style="width:100%;">
+                        <label id="emailInputLabel" style="font-size:14px;color:black;font-weight:bold;padding-left:10px;">Email ID</label>
+                        <input id="assistedRecordingEmailInput" class='defaultInputTypeField' type="text" style="width:95%;margin:0 auto;border-radius:0px;margin-top:8px;margin-bottom:8px;" value="Your Email" placeholder="Your Email" readonly>
+                        <label id="nameInputMandatoryField" style="font-size:14px;color:orange;font-weight:bold;padding-left:10px;">*</label><label id="nameInputLabel" style="font-size:14px;color:black;font-weight:bold;">Name</label>
+                            <input id="assistedRecordingNameInput" class='defaultInputTypeField' type="text" style="width:95%;margin:8px auto;border-radius:0px;margin-top:8px;margin-bottom:8px;" placeholder="Enter Name">
+                             <label id="levelInputLabel" style="font-size:14px;color:black;font-weight:bold;padding-left:10px;">Level</label>
+                                <div id="assistedRecordingLevelInputDiv" style="width:95%;margin:0 auto;border-radius:0px;">
+                                    <select name="select-native-1" id="select-native-1" style="border-radius:0px;" data-corners="false">
+                                        <option value="Select">Select</option>
+                                        <option value="Accenture Leadership">Accenture Leadership</option>
+                                        <option value="Senior Manager">Senior Manager</option>
+                                        <option value="Manager">Manager</option>
+                                        <option value="Associate Manager">Associate Manager</option>
+                                        <option value="Level C">Level C</option>
+                                        <option value="Consultant">Consultant</option>
+                                        <option value="Accenture">Accenture</option>
+                                        <option value="Team Lead">Team Lead</option>
+                                        <option value="MIT">MIT</option>
+                                    </select>
+                                </div>
+                                <label id="areaInputLabel" style="font-size:14px;color:black;font-weight:bold;padding-left:10px;">Area</label>
+                                <div id='assistedRecordingAreaInputDiv' style="width:95%;margin:0 auto;">
+                                    <select name="select-native-2" id="select-native-2" data-corners="false">
+                                    </select>
+                                </div>
+                                <label id="topicInputLabel" style="font-size:14px;color:black;font-weight:bold;padding-left:10px;">Topic</label>
+                                <input id="assistedRecordingTopicInput" class='defaultInputTypeField' type="text" style="width:95%;margin:8px auto;border-radius:0px;" placeholder="Topic">
+                                <label id="formatInputLabel" style="font-size:14px;color:black;font-weight:bold;padding-left:10px;">Format</label>
+                                    <div id='assistedRecordingFormatInputDiv' style="width:95%;margin:0 auto;">
+                                        <select name="select-native-3" id="select-native-3" data-corners="false">
+                                            <option value="Select">Select</option>
+                                            <option value="All">All</option>
+                                            <option value="Audios">Audios</option>
+                                            <option value="Videos">Videos</option>
+                                            <option value="Interviews">Interviews</option>
+                                            <option value="Panel Discussions">Panel Discussions</option>
+                                            <option value="Technology Conferences">Technology Conferences</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div style="width:100%;margin:30px auto;display:inline-block;">
+                                        <div style="width:49%;margin:0 auto;float:left;text-align:center;">
+                                            <!--<button id="assistedRecordingCancelRecording" onclick="showRecordingOption('cancel');" type="button">Clear</button>-->
+                                            <img id="assistedRecordingClearRecording" src="images/btn_clear.png"></img>
+                                        </div>
+                                        <div style="width:49%;margin:0 auto;float:left;text-align:center;">
+                                            <!-- <button id="assistedRecordingSubmitRecording" type="button">Submit</button> -->
+                                            <img id="assistedRecordingSubmitRecording" src="images/btn_Submit.png"></img>
+                                        </div>
+                                    </div>
+                                    </div>
+                </div>
+                
+                <div id='selfRecordingSection' style="width:100%;display:none;">
+                    <!-- <div id='selfRecordingHeader' style="width:100%;padding-left:2%;padding-right:2%;">
+                        <strong>Self Recording</strong>
+                    </div> -->
+                    <div style="width:100%;">
+                        <table style="width:100%;">
+                            <tr>
+                                <td style="padding-left:5px;"><label id="assistedRecordingTab" style="font-size:14px;color:orange;font-weight:normal" onclick="showRecordingOption('assisted');">Assisted Recording</label><label>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</label><label id="selfRecordingTab" style="font-size:14px;font-weight:bolder;color:black" onclick="showRecordingOption('self');">Submit Video/Audio</label></td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <div id='selfRecordingDescription' style="width:100%;padding-left:2%;padding-right:2%;margin-top:8px;">
+                        <p>You can submit any of the pre-recorded Video/Audio files.</p>
+                    </div>
+                    
+                    <div id='selfRecordingForm' style="width:100%;">
+                        <label id="emailInputLabel" style="font-size:14px;color:black;font-weight:bold;padding-left:10px;">Email ID</label>
+                        <input id="selfRecordingEmailInput" class='defaultInputTypeField' type="text" style="width:95%;margin:0 auto;border-radius:0px;margin-top:8px;margin-bottom:8px;" placeholder="New Name">
+                            <label id="nameInputMandatoryField" style="font-size:14px;color:orange;font-weight:bold;padding-left:10px;">*</label><label id="nameInputLabel" style="font-size:14px;color:black;font-weight:bold;">Name</label>
+                            <input id="selfRecordingNameInput" class='defaultInputTypeField' type="text" style="width:95%;margin:8px auto;border-radius:0px;margin-top:8px;margin-bottom:8px;" placeholder="Enter Name">
+                            <label id="levelInputLabel" style="font-size:14px;color:black;font-weight:bold;padding-left:10px;">Level</label>
+                                <div id="selfRecordingLevelInputDiv" style="width:95%;margin:0 auto;">
+                                    <select name="select-native-4" id="select-native-4" style="border-radius:0px;" data-corners="false">
+                                        <option value="Select">Select</option>
+                                        <option value="Accenture Leadership">Accenture Leadership</option>
+                                        <option value="Senior Manager">Senior Manager</option>
+                                        <option value="Manager">Manager</option>
+                                        <option value="Associate Manager">Associate Manager</option>
+                                        <option value="Level C">Level C</option>
+                                        <option value="Consultant">Consultant</option>
+                                        <option value="Accenture">Accenture</option>
+                                        <option value="Team Lead">Team Lead</option>
+                                        <option value="MIT">MIT</option>
+                                    </select>
+                                </div>
+                                
+                                <label id="areaInputLabel" style="font-size:14px;color:black;font-weight:bold;padding-left:10px;">Area</label>
+                                <div id="selfRecordingAreaInputDiv" style="width:95%;margin:0 auto;">
+                                    <select name="select-native-5" id="select-native-5" data-corners="false">
+                                    </select>
+                                </div>
+                                
+                                <label id="topicInputLabel" style="font-size:14px;color:black;font-weight:bold;padding-left:10px;">Topic</label>
+                                <input id="selfRecordingTopicInput" class='defaultInputTypeField' type="text" style="width:95%;margin:8px auto;border-radius:0px;" placeholder="Topic">
+                                 <label id="topicInputLabel" style="font-size:14px;color:black;font-weight:bold;padding-left:10px;">File</label><br/>
+                                <div style="width:95%;margin:0 auto;display:inline-block;">
+                                    <div style="width:58%;float:left;padding-left:15px;">
+                                    <input id="selfRecordingFileInput" class='defaultInputTypeField' type="text" style="width:100%;margin:8px auto;border-radius:0px;" placeholder="File">
+                                    </div>
+                                    <div style="width:38%;float:right;"><img id="selfRecordingBrowseFile" src="images/btn_browse.png"></img></div><br/>
+                                    <div style="width:100%;margin:0 auto;text-align:center;">
+                                        
+                                    </div>
+                                    
+                                </div>
+                                <label id="formatInputLabel" style="font-size:14px;color:black;font-weight:bold;padding-left:10px;">Format</label>
+                                    <div id="selfRecordingFormatInputDiv" style="width:95%;margin:0 auto;">
+                                        <select name="select-native-6" id="select-native-6" data-corners="false">
+                                            <option value="Select">Select</option>
+                                            <option value="All">All</option>
+                                            <option value="Audios">Audios</option>
+                                            <option value="Videos">Videos</option>
+                                            <option value="Interviews">Interviews</option>
+                                            <option value="Panel Discussions">Panel Discussions</option>
+                                            <option value="Technology Conferences">Technology Conferences</option>
+                                        </select>
+                                    </div>
+                                    <div style="width:100%;margin:30px auto;display:inline-block;">
+                                        <div style="width:49%;margin:0 auto;float:left;text-align:center;">
+                                            <!--<button id="assistedRecordingCancelRecording" onclick="showRecordingOption('cancel');" type="button">Clear</button>-->
+                                            <img id="selfRecordingClearRecording" src="images/btn_clear.png"></img>
+                                        </div>
+                                        <div style="width:49%;margin:0 auto;float:left;text-align:center;">
+                                            <!-- <button id="assistedRecordingSubmitRecording" type="button">Submit</button> -->
+                                            <img id="selfRecordingSubmitRecording" src="images/btn_SubmitForReview.png"></img>
+                                        </div>
+                                    </div>
+                                    </div>
+                </div>
+                   
+                
+            </div>
+            <div class="footerPadding">
+                <br/><label style="font-size: 12px;">&copy; 2014 Accenture. All Rights Reserved.</label>
+            </div>
+            
+            
+          <div data-position="fixed" data-tap-toggle ="false" align="center" style="background:grey" class="toggleButtonDiv">
+
+                           <fieldset data-role="controlgroup" data-type="horizontal">
+                                  <table >
+                                         <tr>
+                                                <td><label style="font-size:16px;font-weight:bold">Online Mode </label></td>
+                                                <td>
+                                                <input class="abc" type="radio" align="center" name="radio-view14" id="radio-view-a14" value="online">
+                                                <label for="radio-view-a14" style="font-size:14px;">On</label>
+                                                <input class="xyz" type="radio"  name="radio-view14" id="radio-view-b14" value="offline">
+                                                <label for="radio-view-b14" style="font-size:14px;">Off</label></td>
+                                         </tr>
+                                  </table>
+                           </fieldset>
+
+                     </div>
+            
+            
+            
+            
+            
+        </div>
+        
+        <!-- ******************************************** Contribute - Page ******************************************** -->
+        
+        
+        
+        
+        
+
+
+
+	</body>
+</html>

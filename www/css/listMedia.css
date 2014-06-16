@@ -1,0 +1,45 @@
+
+
+.tableList{
+	width:100%;margin:0px;padding:0px;margin-top:5px;margin-bottom: 5px;border:none;
+}
+
+.listItemId
+{
+	margin:0px;padding:0px;width:25%;height:100px;
+}
+
+.thumnbNail
+{
+	height:100px;width:100px;border:solid 1px;margin:auto;margin-left:15px;margin-top:2%
+}
+
+.tdTableListTitle
+{
+	margin:0px; padding:0px; width:65%;color: orange;font-style:bold;padding-left:12px;font-size: smaller;
+}
+
+.tdTableListIcons
+{
+	margin:0px; padding:0px; width:10%;
+}
+
+.listImg
+{
+	height:20px;width:80%;border:none;padding:0px;margin-right:15px;
+}
+
+.tdTableAuthor
+{
+	margin:0px;padding:0px;width:65%;color: orange;font-size:14px;padding-left:12px;font-size: smaller;
+}
+
+.tdTableDate
+{
+	margin:0px;padding:0px;width : 65%;font-size:14px;padding-left:12px;font-size: smaller;
+}
+
+.tdIconArrow
+{
+	margin:0px; padding:0px; width:10%;
+}
